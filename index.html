@@ -6,6 +6,7 @@
     <title>Advanced Stock Market Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <script>
         tailwind.config = {
@@ -29,10 +30,16 @@
             <div class="container mx-auto px-4 py-4">
                 <div class="flex justify-between items-center">
                     <div>
-                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Stock Market Dashboard</h1>
+                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Advanced Stock Market Dashboard</h1>
                         <p class="text-sm text-gray-500 dark:text-gray-400" id="last-updated">Loading...</p>
                     </div>
                     <div class="flex items-center space-x-4">
+                        <a href="analytics.html" class="btn-secondary text-sm">
+                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                            Analytics
+                        </a>
                         <div class="text-sm text-gray-500 dark:text-gray-400">
                             <span id="market-summary">Loading market data...</span>
                         </div>
@@ -105,6 +112,60 @@
                 </div>
             </div>
 
+            <!-- Market Sentiment & Analytics -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Market Sentiment -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Market Sentiment</h3>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-green-600 dark:text-green-400" id="bullish-count">-</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">Bullish</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-red-600 dark:text-red-400" id="bearish-count">-</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">Bearish</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-gray-600 dark:text-gray-400" id="neutral-count">-</div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400">Neutral</div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex justify-between text-sm text-gray-500 dark:text-gray-400 mb-1">
+                            <span>Market Sentiment</span>
+                            <span id="avg-change">-</span>
+                        </div>
+                        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                            <div id="sentiment-bar" class="h-2 rounded-full transition-all duration-300"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sector Performance -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Sector Performance</h3>
+                    <div id="sector-performance" class="space-y-3">
+                        <!-- Sector data will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Charts Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- Market Cap Distribution -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Market Cap Distribution</h3>
+                    <canvas id="market-cap-chart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- Volume Analysis -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Volume Analysis</h3>
+                    <canvas id="volume-chart" width="400" height="200"></canvas>
+                </div>
+            </div>
+
             <!-- Stock Table -->
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
                 <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
@@ -134,7 +195,7 @@
         <!-- Stock Detail Modal -->
         <div id="stock-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
             <div class="flex items-center justify-center min-h-screen p-4">
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full max-h-screen overflow-y-auto">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-6xl w-full max-h-screen overflow-y-auto">
                     <div class="p-6 border-b border-gray-200 dark:border-gray-700">
                         <div class="flex justify-between items-center">
                             <h3 class="text-xl font-semibold" id="modal-title">Stock Details</h3>
@@ -151,6 +212,9 @@
                 </div>
             </div>
         </div>
+
+        <!-- Notification Container -->
+        <div id="notification-container" class="fixed top-4 right-4 z-50 space-y-2"></div>
     </div>
 
     <script src="script.js"></script>

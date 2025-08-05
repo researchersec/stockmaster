@@ -493,12 +493,163 @@ function showNotification(message) {
 
 function displayMarketSummary(summaryData) {
     const marketSummary = summaryData.market_summary;
+    const marketSentiment = summaryData.market_sentiment;
+    
     document.getElementById('gainers-count').textContent = marketSummary.gainers;
     document.getElementById('losers-count').textContent = marketSummary.losers;
     document.getElementById('total-stocks').textContent = marketSummary.total_stocks;
     
+    // Market sentiment
+    document.getElementById('bullish-count').textContent = marketSentiment.bullish_stocks;
+    document.getElementById('bearish-count').textContent = marketSentiment.bearish_stocks;
+    document.getElementById('neutral-count').textContent = marketSentiment.neutral_stocks;
+    
+    // Average change
+    const avgChange = marketSummary.avg_change_percent;
+    document.getElementById('avg-change').textContent = `${avgChange >= 0 ? '+' : ''}${avgChange.toFixed(2)}%`;
+    
+    // Sentiment bar
+    const sentimentBar = document.getElementById('sentiment-bar');
+    const sentimentPercent = Math.min(Math.max((avgChange + 10) / 20 * 100, 0), 100);
+    sentimentBar.style.width = `${sentimentPercent}%`;
+    sentimentBar.className = `h-2 rounded-full transition-all duration-300 ${
+        avgChange > 2 ? 'bg-green-500' : avgChange < -2 ? 'bg-red-500' : 'bg-yellow-500'
+    }`;
+    
     const summaryText = `${marketSummary.gainers} gainers, ${marketSummary.losers} losers`;
     document.getElementById('market-summary').textContent = summaryText;
+    
+    // Display sector performance
+    displaySectorPerformance(summaryData.sector_breakdown);
+    
+    // Create advanced charts
+    createAdvancedCharts(currentStockData);
+}
+
+function displaySectorPerformance(sectorBreakdown) {
+    const container = document.getElementById('sector-performance');
+    container.innerHTML = '';
+    
+    Object.entries(sectorBreakdown).forEach(([sector, data]) => {
+        const changeClass = data.avg_change >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400';
+        const changeIcon = data.avg_change >= 0 ? '↗' : '↘';
+        
+        container.innerHTML += `
+            <div class="flex justify-between items-center p-3 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                <div>
+                    <div class="font-medium">${sector}</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400">${data.count} stocks</div>
+                </div>
+                <div class="text-right">
+                    <div class="font-medium ${changeClass}">${changeIcon} ${data.avg_change.toFixed(2)}%</div>
+                    <div class="text-sm text-gray-500 dark:text-gray-400">$${(data.total_market_cap / 1e12).toFixed(2)}T</div>
+                </div>
+            </div>
+        `;
+    });
+}
+
+function createAdvancedCharts(stockData) {
+    // Market Cap Distribution Chart
+    const marketCapCtx = document.getElementById('market-cap-chart');
+    if (marketCapCtx) {
+        const marketCapData = stockData.map(stock => ({
+            symbol: stock.symbol,
+            marketCap: stock.market_cap / 1e9 // Convert to billions
+        })).sort((a, b) => b.marketCap - a.marketCap);
+        
+        new Chart(marketCapCtx, {
+            type: 'bar',
+            data: {
+                labels: marketCapData.map(d => d.symbol),
+                datasets: [{
+                    label: 'Market Cap (Billions)',
+                    data: marketCapData.map(d => d.marketCap),
+                    backgroundColor: 'rgba(59, 130, 246, 0.8)',
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(156, 163, 175, 0.1)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    // Volume Analysis Chart
+    const volumeCtx = document.getElementById('volume-chart');
+    if (volumeCtx) {
+        const volumeData = stockData.map(stock => ({
+            symbol: stock.symbol,
+            volume: stock.volume / 1e6, // Convert to millions
+            avgVolume: stock.avg_volume / 1e6
+        })).sort((a, b) => b.volume - a.volume).slice(0, 10);
+        
+        new Chart(volumeCtx, {
+            type: 'bar',
+            data: {
+                labels: volumeData.map(d => d.symbol),
+                datasets: [
+                    {
+                        label: 'Current Volume (Millions)',
+                        data: volumeData.map(d => d.volume),
+                        backgroundColor: 'rgba(16, 185, 129, 0.8)',
+                        borderColor: 'rgba(16, 185, 129, 1)',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Avg Volume (Millions)',
+                        data: volumeData.map(d => d.avgVolume),
+                        backgroundColor: 'rgba(156, 163, 175, 0.8)',
+                        borderColor: 'rgba(156, 163, 175, 1)',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(156, 163, 175, 0.1)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+    }
 }
 
 function updateLastUpdated(timestamp) {
@@ -589,6 +740,39 @@ function displayStockModal(stock) {
                     </div>
                 </div>
                 
+                <!-- Technical Indicators -->
+                ${stock.technical_indicators && Object.keys(stock.technical_indicators).length > 0 ? `
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                    <h4 class="text-lg font-semibold mb-3">Technical Indicators</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">RSI (14)</p>
+                            <p class="font-medium">${stock.technical_indicators.rsi ? stock.technical_indicators.rsi.toFixed(2) : 'N/A'}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">MACD</p>
+                            <p class="font-medium">${stock.technical_indicators.macd ? stock.technical_indicators.macd.toFixed(2) : 'N/A'}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">SMA (20)</p>
+                            <p class="font-medium">${stock.technical_indicators.sma_20 ? '$' + stock.technical_indicators.sma_20.toFixed(2) : 'N/A'}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">SMA (50)</p>
+                            <p class="font-medium">${stock.technical_indicators.sma_50 ? '$' + stock.technical_indicators.sma_50.toFixed(2) : 'N/A'}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">BB Upper</p>
+                            <p class="font-medium">${stock.technical_indicators.bb_upper ? '$' + stock.technical_indicators.bb_upper.toFixed(2) : 'N/A'}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">BB Lower</p>
+                            <p class="font-medium">${stock.technical_indicators.bb_lower ? '$' + stock.technical_indicators.bb_lower.toFixed(2) : 'N/A'}</p>
+                        </div>
+                    </div>
+                </div>
+                ` : ''}
+                
                 <!-- Company Information -->
                 <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
                     <h4 class="text-lg font-semibold mb-3">Company Information</h4>
@@ -645,6 +829,31 @@ function displayStockModal(stock) {
                     </div>
                 </div>
                 
+                <!-- Earnings Information -->
+                ${stock.earnings_data && Object.keys(stock.earnings_data).length > 0 ? `
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                    <h4 class="text-lg font-semibold mb-3">Earnings Information</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Next Earnings</p>
+                            <p class="font-medium">${stock.earnings_data.next_earnings_date || 'N/A'}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">EPS Estimate</p>
+                            <p class="font-medium">${stock.earnings_data.next_earnings_estimate ? '$' + stock.earnings_data.next_earnings_estimate.toFixed(2) : 'N/A'}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Last EPS</p>
+                            <p class="font-medium">${stock.earnings_data.last_earnings_eps ? '$' + stock.earnings_data.last_earnings_eps.toFixed(2) : 'N/A'}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Revenue Growth</p>
+                            <p class="font-medium">${stock.revenue_growth ? (stock.revenue_growth * 100).toFixed(2) + '%' : 'N/A'}</p>
+                        </div>
+                    </div>
+                </div>
+                ` : ''}
+                
                 <!-- Trading Information -->
                 <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
                     <h4 class="text-lg font-semibold mb-3">Trading Information</h4>
@@ -665,16 +874,24 @@ function displayStockModal(stock) {
                             <p class="text-sm text-gray-500 dark:text-gray-400">Float Shares</p>
                             <p class="font-medium">${formatVolume(stock.float_shares)}</p>
                         </div>
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Short Ratio</p>
+                            <p class="font-medium">${stock.short_ratio ? stock.short_ratio.toFixed(2) : 'N/A'}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Institutional %</p>
+                            <p class="font-medium">${stock.held_percent_institutions ? (stock.held_percent_institutions * 100).toFixed(2) + '%' : 'N/A'}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Price Chart -->
+        <!-- Advanced Price Chart with Technical Indicators -->
         ${stock.historical_data && stock.historical_data.length > 0 ? `
         <div class="mt-6 bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-            <h4 class="text-lg font-semibold mb-3">30-Day Price Chart</h4>
-            <canvas id="price-chart" width="400" height="200"></canvas>
+            <h4 class="text-lg font-semibold mb-3">60-Day Price Chart with Technical Indicators</h4>
+            <canvas id="advanced-price-chart" width="800" height="400"></canvas>
         </div>
         ` : ''}
         
@@ -689,54 +906,141 @@ function displayStockModal(stock) {
     
     modal.classList.remove('hidden');
     
-    // Create price chart if historical data is available
+    // Create advanced price chart if historical data is available
     if (stock.historical_data && stock.historical_data.length > 0) {
-        setTimeout(() => createPriceChart(stock.historical_data), 100);
+        setTimeout(() => createAdvancedPriceChart(stock), 100);
     }
 }
 
-function createPriceChart(historicalData) {
-    const ctx = document.getElementById('price-chart');
+function createAdvancedPriceChart(stock) {
+    const ctx = document.getElementById('advanced-price-chart');
     if (!ctx) return;
     
-    const labels = historicalData.map(d => d.date);
-    const prices = historicalData.map(d => d.close);
+    const labels = stock.historical_data.map(d => d.date);
+    const prices = stock.historical_data.map(d => d.close);
+    const volumes = stock.historical_data.map(d => d.volume);
+    
+    // Calculate moving averages
+    const sma20 = calculateSMA(prices, 20);
+    const sma50 = calculateSMA(prices, 50);
     
     new Chart(ctx, {
         type: 'line',
         data: {
             labels: labels,
-            datasets: [{
-                label: 'Close Price',
-                data: prices,
-                borderColor: '#3B82F6',
-                backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                borderWidth: 2,
-                fill: true,
-                tension: 0.1
-            }]
+            datasets: [
+                {
+                    label: 'Close Price',
+                    data: prices,
+                    borderColor: '#3B82F6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    borderWidth: 2,
+                    fill: false,
+                    tension: 0.1,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'SMA 20',
+                    data: sma20,
+                    borderColor: '#10B981',
+                    backgroundColor: 'transparent',
+                    borderWidth: 1,
+                    fill: false,
+                    tension: 0.1,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'SMA 50',
+                    data: sma50,
+                    borderColor: '#F59E0B',
+                    backgroundColor: 'transparent',
+                    borderWidth: 1,
+                    fill: false,
+                    tension: 0.1,
+                    yAxisID: 'y'
+                },
+                {
+                    label: 'Volume',
+                    data: volumes,
+                    borderColor: '#6B7280',
+                    backgroundColor: 'rgba(107, 114, 128, 0.1)',
+                    borderWidth: 1,
+                    fill: false,
+                    tension: 0.1,
+                    yAxisID: 'y1',
+                    type: 'bar'
+                }
+            ]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            interaction: {
+                mode: 'index',
+                intersect: false,
+            },
             plugins: {
                 legend: {
-                    display: false
+                    display: true,
+                    position: 'top'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.datasetIndex === 3) { // Volume
+                                label += formatVolume(context.parsed.y);
+                            } else {
+                                label += '$' + context.parsed.y.toFixed(2);
+                            }
+                            return label;
+                        }
+                    }
                 }
             },
             scales: {
-                y: {
-                    beginAtZero: false,
+                x: {
+                    type: 'time',
+                    time: {
+                        unit: 'day'
+                    },
                     grid: {
                         color: 'rgba(156, 163, 175, 0.1)'
                     }
                 },
-                x: {
+                y: {
+                    type: 'linear',
+                    display: true,
+                    position: 'left',
                     grid: {
                         color: 'rgba(156, 163, 175, 0.1)'
                     }
+                },
+                y1: {
+                    type: 'linear',
+                    display: true,
+                    position: 'right',
+                    grid: {
+                        drawOnChartArea: false,
+                    },
                 }
             }
         }
     });
+}
+
+function calculateSMA(data, period) {
+    const sma = [];
+    for (let i = 0; i < data.length; i++) {
+        if (i < period - 1) {
+            sma.push(null);
+        } else {
+            const sum = data.slice(i - period + 1, i + 1).reduce((a, b) => a + b, 0);
+            sma.push(sum / period);
+        }
+    }
+    return sma;
 }

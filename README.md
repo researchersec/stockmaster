@@ -1,32 +1,72 @@
 # Advanced Stock Market Dashboard
 
-A comprehensive, interactive stock market dashboard that automatically fetches stock data every 5 minutes using GitHub Actions and displays detailed financial information with interactive charts.
+A comprehensive, interactive stock market dashboard that automatically fetches stock data every 5 minutes using GitHub Actions and displays detailed financial information with interactive charts, technical analysis, and advanced market insights.
+
+## 🚀 **Major Enhancements in This Version**
+
+### **📊 Advanced Analytics & Technical Indicators**
+- **Technical Analysis**: RSI, MACD, Bollinger Bands, Moving Averages
+- **Market Sentiment**: Real-time sentiment analysis and market breadth
+- **Sector Rotation**: Track sector performance and rotation patterns
+- **Risk-Return Analysis**: Scatter plots showing risk vs return relationships
+- **Correlation Matrix**: Visualize stock correlations and relationships
+
+### **🎯 Portfolio & Watchlist Management**
+- **Personal Portfolio**: Track your holdings with gain/loss calculations
+- **Custom Watchlists**: Create and manage multiple watchlists
+- **Portfolio Analytics**: Real-time portfolio performance tracking
+- **Price Alerts**: Notifications for significant price movements
+
+### **📈 Enhanced Data & Charts**
+- **60-Day Historical Data**: Extended price history for better analysis
+- **Advanced Charts**: Interactive charts with technical indicators
+- **Volume Analysis**: Volume patterns and unusual activity detection
+- **Earnings Data**: Earnings dates, estimates, and historical performance
+
+### **🔍 Advanced Search & Filtering**
+- **Real-time Search**: Search by symbol or company name
+- **Smart Filtering**: Filter by gainers, losers, watchlist, portfolio
+- **Multi-column Sorting**: Sort by any metric (price, volume, market cap, etc.)
+- **Sector Analysis**: Filter and analyze by sector performance
+
+### **📱 Enhanced User Experience**
+- **Responsive Design**: Perfect on desktop, tablet, and mobile
+- **Dark/Light Mode**: Toggle themes with persistent preferences
+- **Auto-refresh**: Data updates every 30 seconds
+- **Interactive Modals**: Detailed stock information with charts
+- **Notifications**: Browser and in-app notifications for alerts
 
 ## Features
 
-### 🚀 Automated Data Fetching
+### 🚀 **Automated Data Fetching**
 - **GitHub Actions**: Automatically fetches stock data every 5 minutes
 - **Real-time Updates**: Data is updated continuously throughout trading hours
-- **Comprehensive Data**: Fetches 100+ financial metrics for each stock
+- **Comprehensive Data**: Fetches 150+ financial metrics for each stock
+- **Technical Indicators**: Calculates RSI, MACD, Bollinger Bands, and more
 
-### 📊 Interactive Dashboard
+### 📊 **Interactive Dashboard**
 - **Modern UI**: Clean, responsive design with dark/light mode support
-- **Real-time Charts**: Interactive 30-day price charts using Chart.js
+- **Real-time Charts**: Interactive 60-day price charts with technical indicators
 - **Detailed Modals**: Click any stock for comprehensive financial analysis
 - **Market Overview**: Summary cards showing gainers, losers, and total stocks
+- **Advanced Analytics**: Dedicated analytics page with market insights
 
-### 📈 Comprehensive Stock Data
+### 📈 **Comprehensive Stock Data**
 - **Price Information**: Current price, change, day range, 52-week range
-- **Financial Metrics**: P/E ratio, market cap, dividend yield, beta
-- **Company Information**: Sector, industry, employees, website
-- **Trading Data**: Volume, shares outstanding, institutional ownership
+- **Financial Metrics**: P/E ratio, market cap, dividend yield, beta, enterprise value
+- **Company Information**: Sector, industry, employees, website, business summary
+- **Trading Data**: Volume, shares outstanding, institutional ownership, short interest
 - **Analyst Ratings**: Target prices, recommendations, analyst opinions
+- **Earnings Data**: Next earnings date, estimates, historical earnings
+- **Technical Indicators**: RSI, MACD, moving averages, Bollinger Bands
 
-### 🎨 User Experience
+### 🎨 **User Experience**
 - **Dark/Light Mode**: Toggle between themes with persistent preference
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile
 - **Auto-refresh**: Dashboard updates every 30 seconds
 - **Interactive Elements**: Hover effects, smooth animations, and transitions
+- **Portfolio Tracking**: Personal portfolio management with P&L tracking
+- **Watchlists**: Custom watchlists with real-time updates
 
 ## Supported Stocks
 
@@ -41,6 +81,11 @@ The dashboard currently tracks these major stocks:
 - **NFLX** - Netflix Inc.
 - **AMD** - Advanced Micro Devices
 - **INTC** - Intel Corporation
+- **JPM** - JPMorgan Chase & Co.
+- **JNJ** - Johnson & Johnson
+- **V** - Visa Inc.
+- **PG** - Procter & Gamble Co.
+- **UNH** - UnitedHealth Group Inc.
 
 ## Data Sources
 
@@ -49,6 +94,8 @@ All stock data is fetched from **Yahoo Finance** using the `yfinance` Python lib
 - Comprehensive company information
 - Financial ratios and metrics
 - Analyst recommendations and target prices
+- Earnings data and estimates
+- Technical indicators and market data
 
 ## Setup Instructions
 
@@ -69,7 +116,8 @@ python fetch_stock_data.py
 ```
 
 ### 4. View the Dashboard
-Open `index.html` in your web browser to view the dashboard.
+Open `index.html` in your web browser to view the main dashboard.
+Open `analytics.html` to view the advanced analytics page.
 
 ## GitHub Actions Configuration
 
@@ -86,11 +134,15 @@ The automated data fetching is configured in `.github/workflows/fetch-stock-data
 ```
 stock-market-dashboard/
 ├── index.html              # Main dashboard page
+├── analytics.html          # Advanced analytics dashboard
 ├── script.js               # Interactive JavaScript functionality
+├── analytics.js            # Analytics dashboard JavaScript
 ├── styles.css              # Custom CSS styles
 ├── fetch_stock_data.py     # Python script for fetching stock data
+├── serve.py                # Local development server
 ├── requirements.txt        # Python dependencies
 ├── README.md              # This file
+├── SETUP_GUIDE.md         # Quick setup instructions
 ├── .github/
 │   └── workflows/
 │       └── fetch-stock-data.yml  # GitHub Actions workflow
@@ -108,13 +160,46 @@ Each stock contains:
 - Financial metrics (P/E, market cap, ratios)
 - Trading information (volume, shares)
 - Company details (employees, website, business summary)
-- Historical data (30-day price chart data)
+- Historical data (60-day price chart data)
+- Technical indicators (RSI, MACD, moving averages)
+- Earnings data (dates, estimates, historical)
 
 ### Summary Data (`data/summary.json`)
 Contains:
 - Last updated timestamp
 - Market summary (gainers, losers, total stocks)
+- Market sentiment analysis
+- Sector breakdown and performance
 - Array of all stock data
+
+## Advanced Features
+
+### **Portfolio Management**
+- Add stocks to your portfolio with share count and average price
+- Real-time portfolio value and gain/loss tracking
+- Portfolio performance analytics
+- Export portfolio data
+
+### **Watchlist Features**
+- Create multiple watchlists
+- Add/remove stocks with one click
+- Watchlist performance tracking
+- Custom alerts and notifications
+
+### **Technical Analysis**
+- RSI (Relative Strength Index) calculations
+- MACD (Moving Average Convergence Divergence)
+- Bollinger Bands analysis
+- Moving averages (SMA 20, SMA 50)
+- Volume analysis and patterns
+
+### **Market Analytics**
+- Market breadth analysis
+- Sector rotation tracking
+- Correlation matrix visualization
+- Risk-return scatter plots
+- Volatility analysis
+- Performance rankings
 
 ## Customization
 
@@ -125,7 +210,7 @@ symbols = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'META', 'NFLX', 'AMD
 ```
 
 ### Changing Update Frequency
-Modify the cron schedule in `.github/workflows/fetch-stock_data.yml`:
+Modify the cron schedule in `.github/workflows/fetch-stock-data.yml`:
 ```yaml
 cron: '*/5 * * * *'  # Every 5 minutes
 # cron: '0 */1 * * *'  # Every hour
@@ -147,10 +232,11 @@ cron: '*/5 * * * *'  # Every 5 minutes
 
 ## Performance
 
-- **Data Fetching**: ~30 seconds for all stocks
+- **Data Fetching**: ~45 seconds for all stocks
 - **Dashboard Load**: <2 seconds
 - **Auto-refresh**: Every 30 seconds
 - **Chart Rendering**: <1 second
+- **Technical Indicators**: Real-time calculation
 
 ## Troubleshooting
 
@@ -168,6 +254,11 @@ cron: '*/5 * * * *'  # Every 5 minutes
 1. Clear browser cache
 2. Check CSS file loading
 3. Verify Tailwind CSS is accessible
+
+### Portfolio/Watchlist Issues
+1. Check browser localStorage permissions
+2. Clear browser data if needed
+3. Verify JavaScript is enabled
 
 ## Contributing
 

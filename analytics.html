@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Analytics Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Market Analytics Dashboard</h1>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Advanced market analysis and insights</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a href="index.html" class="btn-secondary text-sm">← Back to Dashboard</a>
+                        <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path id="sun" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                <path id="moon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" class="hidden" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-6">
+            <!-- Market Overview -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Market Breadth</h3>
+                    <div id="market-breadth" class="space-y-3">
+                        <!-- Market breadth data will be populated -->
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Sector Rotation</h3>
+                    <div id="sector-rotation" class="space-y-3">
+                        <!-- Sector rotation data will be populated -->
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Market Momentum</h3>
+                    <div id="market-momentum" class="space-y-3">
+                        <!-- Market momentum data will be populated -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced Charts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Correlation Matrix</h3>
+                    <canvas id="correlation-chart" width="400" height="300"></canvas>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Risk-Return Analysis</h3>
+                    <canvas id="risk-return-chart" width="400" height="300"></canvas>
+                </div>
+            </div>
+
+            <!-- Performance Analysis -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Performance Rankings</h3>
+                    <div id="performance-rankings" class="space-y-2">
+                        <!-- Performance rankings will be populated -->
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                    <h3 class="text-lg font-semibold mb-4">Volatility Analysis</h3>
+                    <div id="volatility-analysis" class="space-y-2">
+                        <!-- Volatility analysis will be populated -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Analysis Summary -->
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+                <h3 class="text-lg font-semibold mb-4">Technical Analysis Summary</h3>
+                <div id="technical-summary" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Technical analysis summary will be populated -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="analytics.js"></script>
+</body>
+</html>

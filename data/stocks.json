@@ -1,27 +1,2302 @@
 [
   {
     "symbol": "AAPL",
-    "close": 203.35000610351562,
-    "change_percent": 0.0
+    "name": "Apple Inc.",
+    "current_price": 203.35000610351562,
+    "change": 0.970001220703125,
+    "change_percent": 0.47929696476922273,
+    "five_day_change": -4.9988305515954155,
+    "thirty_day_change": -3.143601305387788,
+    "previous_close": 202.38,
+    "open": 204.505,
+    "day_low": 201.675,
+    "day_high": 207.88,
+    "volume": 73452346,
+    "avg_volume": 53679570,
+    "market_cap": 3017795436544,
+    "pe_ratio": 30.857359,
+    "forward_pe": 24.470516,
+    "price_to_book": 45.892574,
+    "dividend_yield": 0.51,
+    "beta": 1.165,
+    "fifty_two_week_low": 169.21,
+    "fifty_two_week_high": 260.1,
+    "fifty_day_avg": 205.3022,
+    "two_hundred_day_avg": 221.43996,
+    "eps": 6.59,
+    "forward_eps": 8.31,
+    "revenue": 408624988160,
+    "profit_margins": 0.24295999,
+    "return_on_equity": 1.49814,
+    "debt_to_equity": 154.486,
+    "current_ratio": 0.868,
+    "quick_ratio": 0.724,
+    "free_cashflow": 94873747456,
+    "operating_cashflow": 108564996096,
+    "total_cash": 55372001280,
+    "total_debt": 101698002944,
+    "shares_outstanding": 14840399872,
+    "float_shares": 14814864529,
+    "shares_short": 93946599,
+    "short_ratio": 1.74,
+    "held_percent_insiders": 0.02106,
+    "held_percent_institutions": 0.63358,
+    "target_mean_price": 232.76237,
+    "target_median_price": 238.0,
+    "target_high_price": 300.0,
+    "target_low_price": 175.0,
+    "recommendation_mean": 1.93333,
+    "recommendation_key": "buy",
+    "number_of_analyst_opinions": 38,
+    "industry": "Consumer Electronics",
+    "sector": "Technology",
+    "website": "https://www.apple.com",
+    "business_summary": "Apple Inc. designs, manufactures, and markets smartphones, personal computers, tablets, wearables, and accessories worldwide. The company offers iPhone, a line of smartphones; Mac, a line of personal computers; iPad, a line of multi-purpose tablets; and wearables, home, and accessories comprising AirPods, Apple TV, Apple Watch, Beats products, and HomePod. It also provides AppleCare support and cloud services; and operates various platforms, including the App Store that allow customers to discover and download applications and digital content, such as books, music, video, games, and podcasts, as well as advertising services include third-party licensing arrangements and its own advertising platforms. In addition, the company offers various subscription-based services, such as Apple Arcade, a game subscription service; Apple Fitness+, a personalized fitness service; Apple Music, which offers users a curated listening experience with on-demand radio stations; Apple News+, a subscription news and magazine service; Apple TV+, which offers exclusive original content; Apple Card, a co-branded credit card; and Apple Pay, a cashless payment service, as well as licenses its intellectual property. The company serves consumers, and small and mid-sized businesses; and the education, enterprise, and government markets. It distributes third-party applications for its products through the App Store. The company also sells its products through its retail and online stores, and direct sales force; and third-party cellular network carriers, wholesalers, retailers, and resellers. Apple Inc. was founded in 1976 and is headquartered in Cupertino, California.",
+    "employees": 150000,
+    "country": "United States",
+    "city": "Cupertino",
+    "state": "CA",
+    "phone": "(408) 996-1010",
+    "historical_data": [
+      {
+        "date": "2025-07-07",
+        "open": 212.67999267578125,
+        "high": 216.22999572753906,
+        "low": 208.8000030517578,
+        "close": 209.9499969482422,
+        "volume": 50229000
+      },
+      {
+        "date": "2025-07-08",
+        "open": 210.10000610351562,
+        "high": 211.42999267578125,
+        "low": 208.4499969482422,
+        "close": 210.00999450683594,
+        "volume": 42848900
+      },
+      {
+        "date": "2025-07-09",
+        "open": 209.52999877929688,
+        "high": 211.3300018310547,
+        "low": 207.22000122070312,
+        "close": 211.13999938964844,
+        "volume": 48749400
+      },
+      {
+        "date": "2025-07-10",
+        "open": 210.50999450683594,
+        "high": 213.47999572753906,
+        "low": 210.02999877929688,
+        "close": 212.41000366210938,
+        "volume": 44443600
+      },
+      {
+        "date": "2025-07-11",
+        "open": 210.57000732421875,
+        "high": 212.1300048828125,
+        "low": 209.86000061035156,
+        "close": 211.16000366210938,
+        "volume": 39765800
+      },
+      {
+        "date": "2025-07-14",
+        "open": 209.92999267578125,
+        "high": 210.91000366210938,
+        "low": 207.5399932861328,
+        "close": 208.6199951171875,
+        "volume": 38840100
+      },
+      {
+        "date": "2025-07-15",
+        "open": 209.22000122070312,
+        "high": 211.88999938964844,
+        "low": 208.9199981689453,
+        "close": 209.11000061035156,
+        "volume": 42296300
+      },
+      {
+        "date": "2025-07-16",
+        "open": 210.3000030517578,
+        "high": 212.39999389648438,
+        "low": 208.63999938964844,
+        "close": 210.16000366210938,
+        "volume": 47490500
+      },
+      {
+        "date": "2025-07-17",
+        "open": 210.57000732421875,
+        "high": 211.8000030517578,
+        "low": 209.58999633789062,
+        "close": 210.02000427246094,
+        "volume": 48068100
+      },
+      {
+        "date": "2025-07-18",
+        "open": 210.8699951171875,
+        "high": 211.7899932861328,
+        "low": 209.6999969482422,
+        "close": 211.17999267578125,
+        "volume": 48974600
+      },
+      {
+        "date": "2025-07-21",
+        "open": 212.10000610351562,
+        "high": 215.77999877929688,
+        "low": 211.6300048828125,
+        "close": 212.47999572753906,
+        "volume": 51377400
+      },
+      {
+        "date": "2025-07-22",
+        "open": 213.13999938964844,
+        "high": 214.9499969482422,
+        "low": 212.22999572753906,
+        "close": 214.39999389648438,
+        "volume": 46404100
+      },
+      {
+        "date": "2025-07-23",
+        "open": 215.0,
+        "high": 215.14999389648438,
+        "low": 212.41000366210938,
+        "close": 214.14999389648438,
+        "volume": 46989300
+      },
+      {
+        "date": "2025-07-24",
+        "open": 213.89999389648438,
+        "high": 215.69000244140625,
+        "low": 213.52999877929688,
+        "close": 213.75999450683594,
+        "volume": 46022600
+      },
+      {
+        "date": "2025-07-25",
+        "open": 214.6999969482422,
+        "high": 215.24000549316406,
+        "low": 213.39999389648438,
+        "close": 213.8800048828125,
+        "volume": 40268800
+      },
+      {
+        "date": "2025-07-28",
+        "open": 214.02999877929688,
+        "high": 214.85000610351562,
+        "low": 213.05999755859375,
+        "close": 214.0500030517578,
+        "volume": 37858000
+      },
+      {
+        "date": "2025-07-29",
+        "open": 214.17999267578125,
+        "high": 214.80999755859375,
+        "low": 210.82000732421875,
+        "close": 211.27000427246094,
+        "volume": 51411700
+      },
+      {
+        "date": "2025-07-30",
+        "open": 211.89999389648438,
+        "high": 212.38999938964844,
+        "low": 207.72000122070312,
+        "close": 209.0500030517578,
+        "volume": 45512500
+      },
+      {
+        "date": "2025-07-31",
+        "open": 208.49000549316406,
+        "high": 209.83999633789062,
+        "low": 207.16000366210938,
+        "close": 207.57000732421875,
+        "volume": 80698400
+      },
+      {
+        "date": "2025-08-01",
+        "open": 210.8699951171875,
+        "high": 213.5800018310547,
+        "low": 201.5,
+        "close": 202.3800048828125,
+        "volume": 104434500
+      },
+      {
+        "date": "2025-08-04",
+        "open": 204.50999450683594,
+        "high": 207.8800048828125,
+        "low": 201.67999267578125,
+        "close": 203.35000610351562,
+        "volume": 75020600
+      }
+    ],
+    "last_updated": "2025-08-05T13:03:46.397496"
   },
   {
     "symbol": "MSFT",
-    "close": 535.6400146484375,
-    "change_percent": 0.0
+    "name": "Microsoft Corporation",
+    "current_price": 535.6400146484375,
+    "change": 11.530029296875,
+    "change_percent": 2.1999255154699804,
+    "five_day_change": 4.515124809451219,
+    "thirty_day_change": 7.618744140225855,
+    "previous_close": 524.11,
+    "open": 528.19,
+    "day_low": 528.135,
+    "day_high": 538.25,
+    "volume": 25088688,
+    "avg_volume": 19670220,
+    "market_cap": 3981503365120,
+    "pe_ratio": 39.2123,
+    "forward_pe": 35.828766,
+    "price_to_book": 11.5929365,
+    "dividend_yield": 0.62,
+    "beta": 1.055,
+    "fifty_two_week_low": 344.79,
+    "fifty_two_week_high": 555.45,
+    "fifty_day_avg": 490.2262,
+    "two_hundred_day_avg": 433.41284,
+    "eps": 13.66,
+    "forward_eps": 14.95,
+    "revenue": 281723994112,
+    "profit_margins": 0.36146,
+    "return_on_equity": 0.33280998,
+    "debt_to_equity": 32.661,
+    "current_ratio": 1.353,
+    "quick_ratio": 1.221,
+    "free_cashflow": 60800376832,
+    "operating_cashflow": 136162000896,
+    "total_cash": 94282997760,
+    "total_debt": 112184000512,
+    "shares_outstanding": 7433169920,
+    "float_shares": 7422536951,
+    "shares_short": 53792695,
+    "short_ratio": 2.76,
+    "held_percent_insiders": 0.00063,
+    "held_percent_institutions": 0.74696,
+    "target_mean_price": 606.60846,
+    "target_median_price": 630.0,
+    "target_high_price": 700.0,
+    "target_low_price": 432.0,
+    "recommendation_mean": 1.31034,
+    "recommendation_key": "strong_buy",
+    "number_of_analyst_opinions": 51,
+    "industry": "Software - Infrastructure",
+    "sector": "Technology",
+    "website": "https://www.microsoft.com",
+    "business_summary": "Microsoft Corporation develops and supports software, services, devices, and solutions worldwide. The company's Productivity and Business Processes segment offers Microsoft 365 Commercial, Enterprise Mobility + Security, Windows Commercial, Power BI, Exchange, SharePoint, Microsoft Teams, Security and Compliance, and Copilot; Microsoft 365 Commercial products, such as Windows Commercial on-premises and Office licensed services; Microsoft 365 Consumer products and cloud services, such as Microsoft 365 Consumer subscriptions, Office licensed on-premises, and other consumer services; LinkedIn; Dynamics products and cloud services, such as Dynamics 365, cloud-based applications, and on-premises ERP and CRM applications. Its Intelligent Cloud segment provides Server products and cloud services, such as Azure and other cloud services, GitHub, Nuance Healthcare, virtual desktop offerings, and other cloud services; Server products, including SQL and Windows Server, Visual Studio and System Center related Client Access Licenses, and other on-premises offerings; Enterprise and partner services, including Enterprise Support and Nuance professional Services, Industry Solutions, Microsoft Partner Network, and Learning Experience. The company's Personal Computing segment provides Windows and Devices, such as Windows OEM licensing and Devices and Surface and PC accessories; Gaming services and solutions, such as Xbox hardware, content, and services, first- and third-party content Xbox Game Pass, subscriptions, and Cloud Gaming, advertising, and other cloud services; search and news advertising services, such as Bing and Copilot, Microsoft News and Edge, and third-party affiliates. It sells its products through OEMs, distributors, and resellers; and online and retail stores. The company was founded in 1975 and is headquartered in Redmond, Washington.",
+    "employees": 228000,
+    "country": "United States",
+    "city": "Redmond",
+    "state": "WA",
+    "phone": "425 882 8080",
+    "historical_data": [
+      {
+        "date": "2025-07-07",
+        "open": 497.3800048828125,
+        "high": 498.75,
+        "low": 495.2300109863281,
+        "close": 497.7200012207031,
+        "volume": 13981600
+      },
+      {
+        "date": "2025-07-08",
+        "open": 497.239990234375,
+        "high": 498.20001220703125,
+        "low": 494.1099853515625,
+        "close": 496.6199951171875,
+        "volume": 11846600
+      },
+      {
+        "date": "2025-07-09",
+        "open": 500.29998779296875,
+        "high": 506.7799987792969,
+        "low": 499.739990234375,
+        "close": 503.510009765625,
+        "volume": 18659500
+      },
+      {
+        "date": "2025-07-10",
+        "open": 503.04998779296875,
+        "high": 504.44000244140625,
+        "low": 497.75,
+        "close": 501.4800109863281,
+        "volume": 16492100
+      },
+      {
+        "date": "2025-07-11",
+        "open": 498.4700012207031,
+        "high": 505.0299987792969,
+        "low": 497.79998779296875,
+        "close": 503.32000732421875,
+        "volume": 16459500
+      },
+      {
+        "date": "2025-07-14",
+        "open": 501.5199890136719,
+        "high": 503.9700012207031,
+        "low": 501.0299987792969,
+        "close": 503.0199890136719,
+        "volume": 12058800
+      },
+      {
+        "date": "2025-07-15",
+        "open": 503.0199890136719,
+        "high": 508.29998779296875,
+        "low": 502.7900085449219,
+        "close": 505.82000732421875,
+        "volume": 14927200
+      },
+      {
+        "date": "2025-07-16",
+        "open": 505.17999267578125,
+        "high": 506.7200012207031,
+        "low": 501.8900146484375,
+        "close": 505.6199951171875,
+        "volume": 15154400
+      },
+      {
+        "date": "2025-07-17",
+        "open": 505.67999267578125,
+        "high": 513.3699951171875,
+        "low": 505.6199951171875,
+        "close": 511.70001220703125,
+        "volume": 17503100
+      },
+      {
+        "date": "2025-07-18",
+        "open": 514.47998046875,
+        "high": 514.6400146484375,
+        "low": 507.42999267578125,
+        "close": 510.04998779296875,
+        "volume": 21209700
+      },
+      {
+        "date": "2025-07-21",
+        "open": 506.7099914550781,
+        "high": 512.0900268554688,
+        "low": 505.54998779296875,
+        "close": 510.05999755859375,
+        "volume": 14066800
+      },
+      {
+        "date": "2025-07-22",
+        "open": 510.9700012207031,
+        "high": 511.20001220703125,
+        "low": 505.2699890136719,
+        "close": 505.2699890136719,
+        "volume": 13868600
+      },
+      {
+        "date": "2025-07-23",
+        "open": 506.75,
+        "high": 506.7900085449219,
+        "low": 500.70001220703125,
+        "close": 505.8699951171875,
+        "volume": 16396600
+      },
+      {
+        "date": "2025-07-24",
+        "open": 508.7699890136719,
+        "high": 513.6699829101562,
+        "low": 507.29998779296875,
+        "close": 510.8800048828125,
+        "volume": 16107000
+      },
+      {
+        "date": "2025-07-25",
+        "open": 512.469970703125,
+        "high": 518.2899780273438,
+        "low": 510.3599853515625,
+        "close": 513.7100219726562,
+        "volume": 19125700
+      },
+      {
+        "date": "2025-07-28",
+        "open": 514.0800170898438,
+        "high": 515.0,
+        "low": 510.1199951171875,
+        "close": 512.5,
+        "volume": 14308000
+      },
+      {
+        "date": "2025-07-29",
+        "open": 515.530029296875,
+        "high": 517.6199951171875,
+        "low": 511.55999755859375,
+        "close": 512.5700073242188,
+        "volume": 16469200
+      },
+      {
+        "date": "2025-07-30",
+        "open": 515.1699829101562,
+        "high": 515.9500122070312,
+        "low": 509.44000244140625,
+        "close": 513.239990234375,
+        "volume": 26380400
+      },
+      {
+        "date": "2025-07-31",
+        "open": 555.22998046875,
+        "high": 555.4500122070312,
+        "low": 531.9000244140625,
+        "close": 533.5,
+        "volume": 51617300
+      },
+      {
+        "date": "2025-08-01",
+        "open": 535.0,
+        "high": 535.7999877929688,
+        "low": 520.8599853515625,
+        "close": 524.1099853515625,
+        "volume": 28977600
+      },
+      {
+        "date": "2025-08-04",
+        "open": 528.27001953125,
+        "high": 538.25,
+        "low": 528.1300048828125,
+        "close": 535.6400146484375,
+        "volume": 25328300
+      }
+    ],
+    "last_updated": "2025-08-05T13:03:47.620781"
   },
   {
     "symbol": "GOOGL",
-    "close": 195.0399932861328,
-    "change_percent": 0.0
+    "name": "Alphabet Inc.",
+    "current_price": 195.0399932861328,
+    "change": 5.9099884033203125,
+    "change_percent": 3.1248285574688275,
+    "five_day_change": 1.2773867648190231,
+    "thirty_day_change": 10.322982461152403,
+    "previous_close": 189.13,
+    "open": 190.31,
+    "day_low": 190.12,
+    "day_high": 195.27,
+    "volume": 31270072,
+    "avg_volume": 42565590,
+    "market_cap": 2362675560448,
+    "pe_ratio": 20.793177,
+    "forward_pe": 21.767857,
+    "price_to_book": 6.505019,
+    "dividend_yield": 0.43,
+    "beta": 1.014,
+    "fifty_two_week_low": 140.53,
+    "fifty_two_week_high": 207.05,
+    "fifty_day_avg": 178.6418,
+    "two_hundred_day_avg": 175.1787,
+    "eps": 9.38,
+    "forward_eps": 8.96,
+    "revenue": 371399000064,
+    "profit_margins": 0.31118,
+    "return_on_equity": 0.34829,
+    "debt_to_equity": 11.481,
+    "current_ratio": 1.904,
+    "quick_ratio": 1.72,
+    "free_cashflow": 49786499072,
+    "operating_cashflow": 133707997184,
+    "total_cash": 95147999232,
+    "total_debt": 41668001792,
+    "shares_outstanding": 5816999936,
+    "float_shares": 10836828700,
+    "shares_short": 58227546,
+    "short_ratio": 1.41,
+    "held_percent_insiders": 0.00257,
+    "held_percent_institutions": 0.80918,
+    "target_mean_price": 216.01288,
+    "target_median_price": 220.0,
+    "target_high_price": 248.0,
+    "target_low_price": 160.0,
+    "recommendation_mean": 1.54412,
+    "recommendation_key": "buy",
+    "number_of_analyst_opinions": 52,
+    "industry": "Internet Content & Information",
+    "sector": "Communication Services",
+    "website": "https://abc.xyz",
+    "business_summary": "Alphabet Inc. offers various products and platforms in the United States, Europe, the Middle East, Africa, the Asia-Pacific, Canada, and Latin America. It operates through Google Services, Google Cloud, and Other Bets segments. The Google Services segment provides products and services, including ads, Android, Chrome, devices, Gmail, Google Drive, Google Maps, Google Photos, Google Play, Search, and YouTube. It is also involved in the sale of apps and in-app purchases and digital content in the Google Play and YouTube; and devices, as well as in the provision of YouTube consumer subscription services. The Google Cloud segment offers AI infrastructure, Vertex AI platform, cybersecurity, data and analytics, and other services; Google Workspace that include cloud-based communication and collaboration tools for enterprises, such as Calendar, Gmail, Docs, Drive, and Meet; and other services for enterprise customers. The Other Bets segment sells healthcare-related and internet services. The company was incorporated in 1998 and is headquartered in Mountain View, California.",
+    "employees": 187103,
+    "country": "United States",
+    "city": "Mountain View",
+    "state": "CA",
+    "phone": "650-253-0000",
+    "historical_data": [
+      {
+        "date": "2025-07-07",
+        "open": 179.05999755859375,
+        "high": 179.3000030517578,
+        "low": 175.67999267578125,
+        "close": 176.7899932861328,
+        "volume": 34175600
+      },
+      {
+        "date": "2025-07-08",
+        "open": 177.85000610351562,
+        "high": 177.9499969482422,
+        "low": 172.80999755859375,
+        "close": 174.36000061035156,
+        "volume": 40442500
+      },
+      {
+        "date": "2025-07-09",
+        "open": 175.25,
+        "high": 179.44000244140625,
+        "low": 172.77000427246094,
+        "close": 176.6199951171875,
+        "volume": 43025600
+      },
+      {
+        "date": "2025-07-10",
+        "open": 175.6300048828125,
+        "high": 178.42999267578125,
+        "low": 174.3800048828125,
+        "close": 177.6199951171875,
+        "volume": 29252400
+      },
+      {
+        "date": "2025-07-11",
+        "open": 176.7899932861328,
+        "high": 181.42999267578125,
+        "low": 176.47999572753906,
+        "close": 180.19000244140625,
+        "volume": 34282900
+      },
+      {
+        "date": "2025-07-14",
+        "open": 181.00999450683594,
+        "high": 183.6699981689453,
+        "low": 179.67999267578125,
+        "close": 181.55999755859375,
+        "volume": 32536600
+      },
+      {
+        "date": "2025-07-15",
+        "open": 182.80999755859375,
+        "high": 184.22000122070312,
+        "low": 181.60000610351562,
+        "close": 182.0,
+        "volume": 33448300
+      },
+      {
+        "date": "2025-07-16",
+        "open": 183.24000549316406,
+        "high": 184.3300018310547,
+        "low": 182.02999877929688,
+        "close": 182.97000122070312,
+        "volume": 33104200
+      },
+      {
+        "date": "2025-07-17",
+        "open": 182.13999938964844,
+        "high": 184.05999755859375,
+        "low": 180.47999572753906,
+        "close": 183.5800018310547,
+        "volume": 31992600
+      },
+      {
+        "date": "2025-07-18",
+        "open": 185.39999389648438,
+        "high": 186.4199981689453,
+        "low": 183.7100067138672,
+        "close": 185.05999755859375,
+        "volume": 34014500
+      },
+      {
+        "date": "2025-07-21",
+        "open": 186.25,
+        "high": 190.2899932861328,
+        "low": 186.14999389648438,
+        "close": 190.10000610351562,
+        "volume": 45803100
+      },
+      {
+        "date": "2025-07-22",
+        "open": 191.5,
+        "high": 191.64999389648438,
+        "low": 187.4600067138672,
+        "close": 191.33999633789062,
+        "volume": 44660200
+      },
+      {
+        "date": "2025-07-23",
+        "open": 191.5,
+        "high": 192.52999877929688,
+        "low": 189.17999267578125,
+        "close": 190.22999572753906,
+        "volume": 58681900
+      },
+      {
+        "date": "2025-07-24",
+        "open": 197.02999877929688,
+        "high": 197.9499969482422,
+        "low": 191.0,
+        "close": 192.1699981689453,
+        "volume": 74881700
+      },
+      {
+        "date": "2025-07-25",
+        "open": 191.97999572753906,
+        "high": 194.3300018310547,
+        "low": 191.25999450683594,
+        "close": 193.17999267578125,
+        "volume": 39785900
+      },
+      {
+        "date": "2025-07-28",
+        "open": 193.64999389648438,
+        "high": 194.0500030517578,
+        "low": 190.83999633789062,
+        "close": 192.5800018310547,
+        "volume": 38139500
+      },
+      {
+        "date": "2025-07-29",
+        "open": 192.42999267578125,
+        "high": 195.9199981689453,
+        "low": 192.0800018310547,
+        "close": 195.75,
+        "volume": 41389200
+      },
+      {
+        "date": "2025-07-30",
+        "open": 195.60000610351562,
+        "high": 197.60000610351562,
+        "low": 194.69000244140625,
+        "close": 196.52999877929688,
+        "volume": 32445400
+      },
+      {
+        "date": "2025-07-31",
+        "open": 195.7100067138672,
+        "high": 195.99000549316406,
+        "low": 191.08999633789062,
+        "close": 191.89999389648438,
+        "volume": 51329200
+      },
+      {
+        "date": "2025-08-01",
+        "open": 189.02999877929688,
+        "high": 190.8300018310547,
+        "low": 187.82000732421875,
+        "close": 189.1300048828125,
+        "volume": 34832200
+      },
+      {
+        "date": "2025-08-04",
+        "open": 190.2899932861328,
+        "high": 195.27000427246094,
+        "low": 190.1199951171875,
+        "close": 195.0399932861328,
+        "volume": 31503400
+      }
+    ],
+    "last_updated": "2025-08-05T13:03:48.850326"
   },
   {
     "symbol": "AMZN",
-    "close": 211.64999389648438,
-    "change_percent": 0.0
+    "name": "Amazon.com, Inc.",
+    "current_price": 211.64999389648438,
+    "change": -3.100006103515625,
+    "change_percent": -1.443541840985157,
+    "five_day_change": -9.081146097059378,
+    "thirty_day_change": -5.289303825861213,
+    "previous_close": 214.75,
+    "open": 217.34,
+    "day_low": 211.42,
+    "day_high": 217.35,
+    "volume": 75899114,
+    "avg_volume": 43170150,
+    "market_cap": 2257226039296,
+    "pe_ratio": 32.263718,
+    "forward_pe": 34.41463,
+    "price_to_book": 6.759605,
+    "dividend_yield": 0,
+    "beta": 1.314,
+    "fifty_two_week_low": 158.54,
+    "fifty_two_week_high": 242.52,
+    "fifty_day_avg": 217.8164,
+    "two_hundred_day_avg": 209.68785,
+    "eps": 6.56,
+    "forward_eps": 6.15,
+    "revenue": 670038032384,
+    "profit_margins": 0.105399996,
+    "return_on_equity": 0.2477,
+    "debt_to_equity": 47.808,
+    "current_ratio": 1.024,
+    "quick_ratio": 0.768,
+    "free_cashflow": 31024001024,
+    "operating_cashflow": 121136996352,
+    "total_cash": 93180002304,
+    "total_debt": 159570001920,
+    "shares_outstanding": 10664899584,
+    "float_shares": 9645133202,
+    "shares_short": 62798046,
+    "short_ratio": 1.41,
+    "held_percent_insiders": 0.08449,
+    "held_percent_institutions": 0.65124,
+    "target_mean_price": 260.46033,
+    "target_median_price": 260.0,
+    "target_high_price": 306.0,
+    "target_low_price": 209.0,
+    "recommendation_mean": 1.33333,
+    "recommendation_key": "strong_buy",
+    "number_of_analyst_opinions": 63,
+    "industry": "Internet Retail",
+    "sector": "Consumer Cyclical",
+    "website": "https://www.aboutamazon.com",
+    "business_summary": "Amazon.com, Inc. engages in the retail sale of consumer products, advertising, and subscriptions service through online and physical stores in North America and internationally. The company operates through three segments: North America, International, and Amazon Web Services (AWS). It also manufactures and sells electronic devices, including Kindle, fire tablets, fire TVs, echo, ring, blink, and eero; and develops and produces media content. In addition, the company offers programs that enable sellers to sell their products in its stores; and programs that allow authors, independent publishers, musicians, filmmakers, Twitch streamers, skill and app developers, and others to publish and sell content. Further, it provides compute, storage, database, analytics, machine learning, and other services, as well as advertising services through programs, such as sponsored ads, display, and video advertising. Additionally, the company offers Amazon Prime, a membership program. The company's products offered through its stores include merchandise and content purchased for resale and products offered by third-party sellers. It serves consumers, sellers, developers, enterprises, content creators, advertisers, and employees. Amazon.com, Inc. was incorporated in 1994 and is headquartered in Seattle, Washington.",
+    "employees": 1546000,
+    "country": "United States",
+    "city": "Seattle",
+    "state": "WA",
+    "phone": "206 266 1000",
+    "historical_data": [
+      {
+        "date": "2025-07-07",
+        "open": 223.0,
+        "high": 224.2899932861328,
+        "low": 222.3699951171875,
+        "close": 223.47000122070312,
+        "volume": 36604100
+      },
+      {
+        "date": "2025-07-08",
+        "open": 223.9199981689453,
+        "high": 224.0,
+        "low": 218.42999267578125,
+        "close": 219.36000061035156,
+        "volume": 45692000
+      },
+      {
+        "date": "2025-07-09",
+        "open": 221.07000732421875,
+        "high": 224.2899932861328,
+        "low": 220.47000122070312,
+        "close": 222.5399932861328,
+        "volume": 38155100
+      },
+      {
+        "date": "2025-07-10",
+        "open": 221.5500030517578,
+        "high": 222.7899932861328,
+        "low": 219.6999969482422,
+        "close": 222.25999450683594,
+        "volume": 30370600
+      },
+      {
+        "date": "2025-07-11",
+        "open": 223.5800018310547,
+        "high": 226.67999267578125,
+        "low": 222.3699951171875,
+        "close": 225.02000427246094,
+        "volume": 50518300
+      },
+      {
+        "date": "2025-07-14",
+        "open": 225.07000732421875,
+        "high": 226.66000366210938,
+        "low": 224.24000549316406,
+        "close": 225.69000244140625,
+        "volume": 35702600
+      },
+      {
+        "date": "2025-07-15",
+        "open": 226.1999969482422,
+        "high": 227.27000427246094,
+        "low": 225.4600067138672,
+        "close": 226.35000610351562,
+        "volume": 34907300
+      },
+      {
+        "date": "2025-07-16",
+        "open": 225.8800048828125,
+        "high": 226.10000610351562,
+        "low": 222.17999267578125,
+        "close": 223.19000244140625,
+        "volume": 39535900
+      },
+      {
+        "date": "2025-07-17",
+        "open": 223.32000732421875,
+        "high": 224.5,
+        "low": 222.50999450683594,
+        "close": 223.8800048828125,
+        "volume": 31855800
+      },
+      {
+        "date": "2025-07-18",
+        "open": 225.13999938964844,
+        "high": 226.39999389648438,
+        "low": 222.97999572753906,
+        "close": 226.1300048828125,
+        "volume": 37833800
+      },
+      {
+        "date": "2025-07-21",
+        "open": 225.83999633789062,
+        "high": 229.69000244140625,
+        "low": 225.64999389648438,
+        "close": 229.3000030517578,
+        "volume": 40297600
+      },
+      {
+        "date": "2025-07-22",
+        "open": 229.67999267578125,
+        "high": 230.0,
+        "low": 226.35000610351562,
+        "close": 227.47000122070312,
+        "volume": 37483700
+      },
+      {
+        "date": "2025-07-23",
+        "open": 228.47000122070312,
+        "high": 228.7899932861328,
+        "low": 227.08999633789062,
+        "close": 228.2899932861328,
+        "volume": 28294900
+      },
+      {
+        "date": "2025-07-24",
+        "open": 229.1699981689453,
+        "high": 236.0,
+        "low": 228.63999938964844,
+        "close": 232.22999572753906,
+        "volume": 42902300
+      },
+      {
+        "date": "2025-07-25",
+        "open": 232.22000122070312,
+        "high": 232.47999572753906,
+        "low": 231.17999267578125,
+        "close": 231.44000244140625,
+        "volume": 28712100
+      },
+      {
+        "date": "2025-07-28",
+        "open": 233.35000610351562,
+        "high": 234.2899932861328,
+        "low": 232.25,
+        "close": 232.7899932861328,
+        "volume": 26300100
+      },
+      {
+        "date": "2025-07-29",
+        "open": 234.14999389648438,
+        "high": 234.72000122070312,
+        "low": 230.30999755859375,
+        "close": 231.00999450683594,
+        "volume": 33716200
+      },
+      {
+        "date": "2025-07-30",
+        "open": 231.63999938964844,
+        "high": 231.8000030517578,
+        "low": 229.2899932861328,
+        "close": 230.19000244140625,
+        "volume": 32993300
+      },
+      {
+        "date": "2025-07-31",
+        "open": 235.77000427246094,
+        "high": 236.52999877929688,
+        "low": 231.39999389648438,
+        "close": 234.11000061035156,
+        "volume": 104357300
+      },
+      {
+        "date": "2025-08-01",
+        "open": 217.2100067138672,
+        "high": 220.44000244140625,
+        "low": 212.8000030517578,
+        "close": 214.75,
+        "volume": 122258800
+      },
+      {
+        "date": "2025-08-04",
+        "open": 217.39999389648438,
+        "high": 217.44000244140625,
+        "low": 211.4199981689453,
+        "close": 211.64999389648438,
+        "volume": 77710500
+      }
+    ],
+    "last_updated": "2025-08-05T13:03:50.050300"
   },
   {
     "symbol": "TSLA",
-    "close": 309.260009765625,
-    "change_percent": 0.0
+    "name": "Tesla, Inc.",
+    "current_price": 309.260009765625,
+    "change": 6.6300048828125,
+    "change_percent": 2.1907956170373253,
+    "five_day_change": -5.01550623665928,
+    "thirty_day_change": 5.211950465052006,
+    "previous_close": 302.63,
+    "open": 309.055,
+    "day_low": 303.0001,
+    "day_high": 312.115,
+    "volume": 78374937,
+    "avg_volume": 107104419,
+    "market_cap": 997502681088,
+    "pe_ratio": 185.18564,
+    "forward_pe": 95.45062,
+    "price_to_book": 12.896043,
+    "dividend_yield": 0,
+    "beta": 2.331,
+    "fifty_two_week_low": 191.48,
+    "fifty_two_week_high": 488.54,
+    "fifty_day_avg": 322.4906,
+    "two_hundred_day_avg": 322.0409,
+    "eps": 1.67,
+    "forward_eps": 3.24,
+    "revenue": 92719996928,
+    "profit_margins": 0.063439995,
+    "return_on_equity": 0.08177,
+    "debt_to_equity": 16.823,
+    "current_ratio": 2.037,
+    "quick_ratio": 1.359,
+    "free_cashflow": 1339624960,
+    "operating_cashflow": 15765000192,
+    "total_cash": 36781998080,
+    "total_debt": 13134000128,
+    "shares_outstanding": 3225449984,
+    "float_shares": 2807656494,
+    "shares_short": 69962139,
+    "short_ratio": 0.69,
+    "held_percent_insiders": 0.12873,
+    "held_percent_institutions": 0.49852002,
+    "target_mean_price": 305.1234,
+    "target_median_price": 320.0,
+    "target_high_price": 500.0,
+    "target_low_price": 115.0,
+    "recommendation_mean": 2.68085,
+    "recommendation_key": "hold",
+    "number_of_analyst_opinions": 41,
+    "industry": "Auto Manufacturers",
+    "sector": "Consumer Cyclical",
+    "website": "https://www.tesla.com",
+    "business_summary": "Tesla, Inc. designs, develops, manufactures, leases, and sells electric vehicles, and energy generation and storage systems in the United States, China, and internationally. The company operates in two segments, Automotive; and Energy Generation and Storage. The Automotive segment offers electric vehicles, as well as sells automotive regulatory credits; and non-warranty after-sales vehicle, used vehicles, body shop and parts, supercharging, retail merchandise, and vehicle insurance services. This segment also provides sedans and sport utility vehicles through direct and used vehicle sales, a network of Tesla Superchargers, and in-app upgrades; purchase financing and leasing services; services for electric vehicles through its company-owned service locations and Tesla mobile service technicians; and vehicle limited warranties and extended service plans. The Energy Generation and Storage segment engages in the design, manufacture, installation, sale, and leasing of solar energy generation and energy storage products, and related services to residential, commercial, and industrial customers and utilities through its website, stores, and galleries, as well as through a network of channel partners. This segment also provides services and repairs to its energy product customers, including under warranty; and various financing options to its residential customers. The company was formerly known as Tesla Motors, Inc. and changed its name to Tesla, Inc. in February 2017. Tesla, Inc. was incorporated in 2003 and is headquartered in Austin, Texas.",
+    "employees": 125665,
+    "country": "United States",
+    "city": "Austin",
+    "state": "TX",
+    "phone": "512 516 8177",
+    "historical_data": [
+      {
+        "date": "2025-07-07",
+        "open": 291.3699951171875,
+        "high": 296.1499938964844,
+        "low": 288.7699890136719,
+        "close": 293.94000244140625,
+        "volume": 131177900
+      },
+      {
+        "date": "2025-07-08",
+        "open": 297.0,
+        "high": 304.04998779296875,
+        "low": 294.3500061035156,
+        "close": 297.80999755859375,
+        "volume": 103246700
+      },
+      {
+        "date": "2025-07-09",
+        "open": 297.54998779296875,
+        "high": 300.1499938964844,
+        "low": 293.54998779296875,
+        "close": 295.8800048828125,
+        "volume": 75586800
+      },
+      {
+        "date": "2025-07-10",
+        "open": 300.04998779296875,
+        "high": 310.4800109863281,
+        "low": 300.0,
+        "close": 309.8699951171875,
+        "volume": 104365300
+      },
+      {
+        "date": "2025-07-11",
+        "open": 307.8900146484375,
+        "high": 314.0899963378906,
+        "low": 305.6499938964844,
+        "close": 313.510009765625,
+        "volume": 79236400
+      },
+      {
+        "date": "2025-07-14",
+        "open": 317.7300109863281,
+        "high": 322.6000061035156,
+        "low": 312.6700134277344,
+        "close": 316.8999938964844,
+        "volume": 78043400
+      },
+      {
+        "date": "2025-07-15",
+        "open": 319.67999267578125,
+        "high": 321.20001220703125,
+        "low": 310.5,
+        "close": 310.7799987792969,
+        "volume": 77556300
+      },
+      {
+        "date": "2025-07-16",
+        "open": 312.79998779296875,
+        "high": 323.5,
+        "low": 312.6199951171875,
+        "close": 321.6700134277344,
+        "volume": 97284800
+      },
+      {
+        "date": "2025-07-17",
+        "open": 323.1499938964844,
+        "high": 324.3399963378906,
+        "low": 317.05999755859375,
+        "close": 319.4100036621094,
+        "volume": 73922900
+      },
+      {
+        "date": "2025-07-18",
+        "open": 321.6600036621094,
+        "high": 330.8999938964844,
+        "low": 321.4200134277344,
+        "close": 329.6499938964844,
+        "volume": 94255000
+      },
+      {
+        "date": "2025-07-21",
+        "open": 334.3999938964844,
+        "high": 338.0,
+        "low": 326.8800048828125,
+        "close": 328.489990234375,
+        "volume": 75768800
+      },
+      {
+        "date": "2025-07-22",
+        "open": 329.739990234375,
+        "high": 335.4100036621094,
+        "low": 321.54998779296875,
+        "close": 332.1099853515625,
+        "volume": 77370400
+      },
+      {
+        "date": "2025-07-23",
+        "open": 330.8999938964844,
+        "high": 336.20001220703125,
+        "low": 328.6700134277344,
+        "close": 332.55999755859375,
+        "volume": 92553800
+      },
+      {
+        "date": "2025-07-24",
+        "open": 310.0,
+        "high": 310.1499938964844,
+        "low": 300.4100036621094,
+        "close": 305.29998779296875,
+        "volume": 156966000
+      },
+      {
+        "date": "2025-07-25",
+        "open": 308.739990234375,
+        "high": 323.6300048828125,
+        "low": 308.010009765625,
+        "close": 316.05999755859375,
+        "volume": 148227000
+      },
+      {
+        "date": "2025-07-28",
+        "open": 318.45001220703125,
+        "high": 330.489990234375,
+        "low": 315.69000244140625,
+        "close": 325.5899963378906,
+        "volume": 112673800
+      },
+      {
+        "date": "2025-07-29",
+        "open": 325.54998779296875,
+        "high": 326.25,
+        "low": 318.25,
+        "close": 321.20001220703125,
+        "volume": 87358900
+      },
+      {
+        "date": "2025-07-30",
+        "open": 322.17999267578125,
+        "high": 324.45001220703125,
+        "low": 311.6199951171875,
+        "close": 319.0400085449219,
+        "volume": 83931900
+      },
+      {
+        "date": "2025-07-31",
+        "open": 319.6099853515625,
+        "high": 321.3699951171875,
+        "low": 306.1000061035156,
+        "close": 308.2699890136719,
+        "volume": 85270900
+      },
+      {
+        "date": "2025-08-01",
+        "open": 306.2099914550781,
+        "high": 309.30999755859375,
+        "low": 297.82000732421875,
+        "close": 302.6300048828125,
+        "volume": 89121400
+      },
+      {
+        "date": "2025-08-04",
+        "open": 309.0799865722656,
+        "high": 312.1199951171875,
+        "low": 303.0,
+        "close": 309.260009765625,
+        "volume": 78529700
+      }
+    ],
+    "last_updated": "2025-08-05T13:03:51.256637"
+  },
+  {
+    "symbol": "NVDA",
+    "name": "NVIDIA Corporation",
+    "current_price": 180.0,
+    "change": 6.279998779296875,
+    "change_percent": 3.6150119359707062,
+    "five_day_change": 1.8387553041018387,
+    "thirty_day_change": 13.751259954156133,
+    "previous_close": 173.72,
+    "open": 175.16,
+    "day_low": 174.52,
+    "day_high": 180.0,
+    "volume": 147053351,
+    "avg_volume": 193026266,
+    "market_cap": 4389768003584,
+    "pe_ratio": 58.064518,
+    "forward_pe": 43.689323,
+    "price_to_book": 52.35602,
+    "dividend_yield": 0.02,
+    "beta": 2.145,
+    "fifty_two_week_low": 86.62,
+    "fifty_two_week_high": 183.3,
+    "fifty_day_avg": 155.4756,
+    "two_hundred_day_avg": 134.97446,
+    "eps": 3.1,
+    "forward_eps": 4.12,
+    "revenue": 148514996224,
+    "profit_margins": 0.51694,
+    "return_on_equity": 1.15463,
+    "debt_to_equity": 12.267,
+    "current_ratio": 3.388,
+    "quick_ratio": 2.857,
+    "free_cashflow": 55443001344,
+    "operating_cashflow": 76158001152,
+    "total_cash": 53690998784,
+    "total_debt": 10284999680,
+    "shares_outstanding": 24387600384,
+    "float_shares": 23419852000,
+    "shares_short": 201664565,
+    "short_ratio": 1.09,
+    "held_percent_insiders": 0.04322,
+    "held_percent_institutions": 0.67427003,
+    "target_mean_price": 182.79474,
+    "target_median_price": 185.0,
+    "target_high_price": 250.0,
+    "target_low_price": 100.0,
+    "recommendation_mean": 1.40909,
+    "recommendation_key": "strong_buy",
+    "number_of_analyst_opinions": 57,
+    "industry": "Semiconductors",
+    "sector": "Technology",
+    "website": "https://www.nvidia.com",
+    "business_summary": "NVIDIA Corporation, a computing infrastructure company, provides graphics and compute and networking solutions in the United States, Singapore, Taiwan, China, Hong Kong, and internationally. The Compute & Networking segment includes its Data Centre accelerated computing platforms and artificial intelligence solutions and software; networking; automotive platforms and autonomous and electric vehicle solutions; Jetson for robotics and other embedded platforms; and DGX Cloud computing services. The Graphics segment offers GeForce GPUs for gaming and PCs, the GeForce NOW game streaming service and related infrastructure, and solutions for gaming platforms; Quadro/NVIDIA RTX GPUs for enterprise workstation graphics; virtual GPU or vGPU software for cloud-based visual and virtual computing; automotive platforms for infotainment systems; and Omniverse software for building and operating industrial AI and digital twin applications. It also customized agentic solutions designed in collaboration with NVIDIA to accelerate enterprise AI adoption. The company's products are used in gaming, professional visualization, data center, and automotive markets. It sells its products to original equipment manufacturers, original device manufacturers, system integrators and distributors, independent software vendors, cloud service providers, consumer internet companies, add-in board manufacturers, distributors, automotive manufacturers and tier-1 automotive suppliers, and other ecosystem participants. NVIDIA Corporation was incorporated in 1993 and is headquartered in Santa Clara, California.",
+    "employees": 36000,
+    "country": "United States",
+    "city": "Santa Clara",
+    "state": "CA",
+    "phone": "408 486 2000",
+    "historical_data": [
+      {
+        "date": "2025-07-07",
+        "open": 158.1999969482422,
+        "high": 159.30999755859375,
+        "low": 157.33999633789062,
+        "close": 158.24000549316406,
+        "volume": 140139000
+      },
+      {
+        "date": "2025-07-08",
+        "open": 159.3300018310547,
+        "high": 160.22000122070312,
+        "low": 158.38999938964844,
+        "close": 160.0,
+        "volume": 138133000
+      },
+      {
+        "date": "2025-07-09",
+        "open": 161.22000122070312,
+        "high": 164.4199981689453,
+        "low": 161.16000366210938,
+        "close": 162.8800048828125,
+        "volume": 183656400
+      },
+      {
+        "date": "2025-07-10",
+        "open": 164.32000732421875,
+        "high": 164.5,
+        "low": 161.61000061035156,
+        "close": 164.10000610351562,
+        "volume": 167704100
+      },
+      {
+        "date": "2025-07-11",
+        "open": 163.72000122070312,
+        "high": 167.88999938964844,
+        "low": 163.47000122070312,
+        "close": 164.9199981689453,
+        "volume": 193633300
+      },
+      {
+        "date": "2025-07-14",
+        "open": 165.3699951171875,
+        "high": 165.49000549316406,
+        "low": 162.02000427246094,
+        "close": 164.07000732421875,
+        "volume": 136975800
+      },
+      {
+        "date": "2025-07-15",
+        "open": 171.19000244140625,
+        "high": 172.39999389648438,
+        "low": 169.1999969482422,
+        "close": 170.6999969482422,
+        "volume": 230627400
+      },
+      {
+        "date": "2025-07-16",
+        "open": 171.05999755859375,
+        "high": 171.75,
+        "low": 168.89999389648438,
+        "close": 171.3699951171875,
+        "volume": 158831500
+      },
+      {
+        "date": "2025-07-17",
+        "open": 172.02000427246094,
+        "high": 174.16000366210938,
+        "low": 170.8300018310547,
+        "close": 173.0,
+        "volume": 160841100
+      },
+      {
+        "date": "2025-07-18",
+        "open": 173.63999938964844,
+        "high": 174.25,
+        "low": 171.25999450683594,
+        "close": 172.41000366210938,
+        "volume": 146456400
+      },
+      {
+        "date": "2025-07-21",
+        "open": 172.75,
+        "high": 173.3800048828125,
+        "low": 171.0,
+        "close": 171.3800048828125,
+        "volume": 123126100
+      },
+      {
+        "date": "2025-07-22",
+        "open": 171.33999633789062,
+        "high": 171.38999938964844,
+        "low": 164.5800018310547,
+        "close": 167.02999877929688,
+        "volume": 193114300
+      },
+      {
+        "date": "2025-07-23",
+        "open": 169.52999877929688,
+        "high": 171.25999450683594,
+        "low": 167.97000122070312,
+        "close": 170.77999877929688,
+        "volume": 154082200
+      },
+      {
+        "date": "2025-07-24",
+        "open": 172.44000244140625,
+        "high": 173.8300018310547,
+        "low": 171.3000030517578,
+        "close": 173.74000549316406,
+        "volume": 128984600
+      },
+      {
+        "date": "2025-07-25",
+        "open": 173.61000061035156,
+        "high": 174.72000122070312,
+        "low": 172.9600067138672,
+        "close": 173.5,
+        "volume": 122316800
+      },
+      {
+        "date": "2025-07-28",
+        "open": 174.02000427246094,
+        "high": 177.0,
+        "low": 173.97000122070312,
+        "close": 176.75,
+        "volume": 140023500
+      },
+      {
+        "date": "2025-07-29",
+        "open": 177.9600067138672,
+        "high": 179.3800048828125,
+        "low": 175.02000427246094,
+        "close": 175.50999450683594,
+        "volume": 154077500
+      },
+      {
+        "date": "2025-07-30",
+        "open": 176.50999450683594,
+        "high": 179.88999938964844,
+        "low": 176.0399932861328,
+        "close": 179.27000427246094,
+        "volume": 174312200
+      },
+      {
+        "date": "2025-07-31",
+        "open": 182.89999389648438,
+        "high": 183.3000030517578,
+        "low": 175.92999267578125,
+        "close": 177.8699951171875,
+        "volume": 221685400
+      },
+      {
+        "date": "2025-08-01",
+        "open": 174.08999633789062,
+        "high": 176.5399932861328,
+        "low": 170.88999938964844,
+        "close": 173.72000122070312,
+        "volume": 204529000
+      },
+      {
+        "date": "2025-08-04",
+        "open": 175.16000366210938,
+        "high": 180.1999969482422,
+        "low": 174.52000427246094,
+        "close": 180.0,
+        "volume": 147674000
+      }
+    ],
+    "last_updated": "2025-08-05T13:03:52.488982"
+  },
+  {
+    "symbol": "META",
+    "name": "Meta Platforms, Inc.",
+    "current_price": 776.3699951171875,
+    "change": 26.3599853515625,
+    "change_percent": 3.514617806207664,
+    "five_day_change": 8.185275118752472,
+    "thirty_day_change": 8.076845758075613,
+    "previous_close": 750.01,
+    "open": 760.17,
+    "day_low": 758.41,
+    "day_high": 776.85,
+    "volume": 15622007,
+    "avg_volume": 12666474,
+    "market_cap": 1950350180352,
+    "pe_ratio": 28.170174,
+    "forward_pe": 30.686562,
+    "price_to_book": 10.013543,
+    "dividend_yield": 0.27,
+    "beta": 1.273,
+    "fifty_two_week_low": 478.65,
+    "fifty_two_week_high": 784.75,
+    "fifty_day_avg": 701.8276,
+    "two_hundred_day_avg": 630.0353,
+    "eps": 27.56,
+    "forward_eps": 25.3,
+    "revenue": 178803998720,
+    "profit_margins": 0.39992002,
+    "return_on_equity": 0.40647998,
+    "debt_to_equity": 25.406,
+    "current_ratio": 1.973,
+    "quick_ratio": 1.706,
+    "free_cashflow": 31991250944,
+    "operating_cashflow": 102299000832,
+    "total_cash": 47070998528,
+    "total_debt": 49559998464,
+    "shares_outstanding": 2168960000,
+    "float_shares": 2164511338,
+    "shares_short": 25609977,
+    "short_ratio": 2.13,
+    "held_percent_insiders": 0.0007,
+    "held_percent_institutions": 0.80120003,
+    "target_mean_price": 847.7886,
+    "target_median_price": 870.5,
+    "target_high_price": 1086.0,
+    "target_low_price": 658.0,
+    "recommendation_mean": 1.38235,
+    "recommendation_key": "strong_buy",
+    "number_of_analyst_opinions": 62,
+    "industry": "Internet Content & Information",
+    "sector": "Communication Services",
+    "website": "https://investor.atmeta.com",
+    "business_summary": "Meta Platforms, Inc. engages in the development of products that enable people to connect and share with friends and family through mobile devices, personal computers, virtual reality and mixed reality headsets, augmented reality, and wearables worldwide. It operates through two segments, Family of Apps (FoA) and Reality Labs (RL). The FoA segment offers Facebook, which enables people to build community through feed, reels, stories, groups, marketplace, and other; Instagram that brings people closer through instagram feed, stories, reels, live, and messaging; Messenger, a messaging application for people to connect with friends, family, communities, and businesses across platforms and devices through text, audio, and video calls; Threads, an application for text-based updates and public conversations; and WhatsApp, a messaging application that is used by people and businesses to communicate and transact in a private way. The RL segment provides virtual, augmented, and mixed reality related products comprising consumer hardware, software, and content that help people feel connected, anytime, and anywhere. The company was formerly known as Facebook, Inc. and changed its name to Meta Platforms, Inc. in October 2021. The company was incorporated in 2004 and is headquartered in Menlo Park, California.",
+    "employees": 75945,
+    "country": "United States",
+    "city": "Menlo Park",
+    "state": "CA",
+    "phone": "650 543 4800",
+    "historical_data": [
+      {
+        "date": "2025-07-07",
+        "open": 717.5999755859375,
+        "high": 727.0,
+        "low": 713.510009765625,
+        "close": 718.3499755859375,
+        "volume": 9457100
+      },
+      {
+        "date": "2025-07-08",
+        "open": 721.5700073242188,
+        "high": 722.9099731445312,
+        "low": 714.8099975585938,
+        "close": 720.6699829101562,
+        "volume": 7770700
+      },
+      {
+        "date": "2025-07-09",
+        "open": 722.719970703125,
+        "high": 737.530029296875,
+        "low": 722.719970703125,
+        "close": 732.780029296875,
+        "volume": 11418000
+      },
+      {
+        "date": "2025-07-10",
+        "open": 731.5499877929688,
+        "high": 735.7999877929688,
+        "low": 719.5999755859375,
+        "close": 727.239990234375,
+        "volume": 9913600
+      },
+      {
+        "date": "2025-07-11",
+        "open": 722.5,
+        "high": 725.1599731445312,
+        "low": 709.7000122070312,
+        "close": 717.510009765625,
+        "volume": 10873900
+      },
+      {
+        "date": "2025-07-14",
+        "open": 717.5999755859375,
+        "high": 728.0,
+        "low": 716.5499877929688,
+        "close": 720.9199829101562,
+        "volume": 8939400
+      },
+      {
+        "date": "2025-07-15",
+        "open": 723.9000244140625,
+        "high": 724.469970703125,
+        "low": 709.8200073242188,
+        "close": 710.3900146484375,
+        "volume": 11529500
+      },
+      {
+        "date": "2025-07-16",
+        "open": 713.3699951171875,
+        "high": 713.969970703125,
+        "low": 699.27001953125,
+        "close": 702.9099731445312,
+        "volume": 13067600
+      },
+      {
+        "date": "2025-07-17",
+        "open": 704.3900146484375,
+        "high": 705.9000244140625,
+        "low": 697.1099853515625,
+        "close": 701.4099731445312,
+        "volume": 11803300
+      },
+      {
+        "date": "2025-07-18",
+        "open": 702.1900024414062,
+        "high": 704.7100219726562,
+        "low": 691.6500244140625,
+        "close": 704.280029296875,
+        "volume": 12779800
+      },
+      {
+        "date": "2025-07-21",
+        "open": 706.7999877929688,
+        "high": 717.0,
+        "low": 705.760009765625,
+        "close": 712.969970703125,
+        "volume": 9404400
+      },
+      {
+        "date": "2025-07-22",
+        "open": 716.1900024414062,
+        "high": 716.5999755859375,
+        "low": 701.4099731445312,
+        "close": 704.8099975585938,
+        "volume": 8921100
+      },
+      {
+        "date": "2025-07-23",
+        "open": 706.3699951171875,
+        "high": 714.6300048828125,
+        "low": 704.9299926757812,
+        "close": 713.5800170898438,
+        "volume": 8771600
+      },
+      {
+        "date": "2025-07-24",
+        "open": 717.0499877929688,
+        "high": 723.6199951171875,
+        "low": 714.0,
+        "close": 714.7999877929688,
+        "volume": 10920800
+      },
+      {
+        "date": "2025-07-25",
+        "open": 716.9199829101562,
+        "high": 720.6500244140625,
+        "low": 711.9000244140625,
+        "close": 712.6799926757812,
+        "volume": 8271700
+      },
+      {
+        "date": "2025-07-28",
+        "open": 715.2000122070312,
+        "high": 724.739990234375,
+        "low": 712.6799926757812,
+        "close": 717.6300048828125,
+        "volume": 8715700
+      },
+      {
+        "date": "2025-07-29",
+        "open": 720.0,
+        "high": 724.469970703125,
+        "low": 699.9099731445312,
+        "close": 700.0,
+        "volume": 13267000
+      },
+      {
+        "date": "2025-07-30",
+        "open": 708.0900268554688,
+        "high": 708.5,
+        "low": 691.2000122070312,
+        "close": 695.2100219726562,
+        "volume": 27077300
+      },
+      {
+        "date": "2025-07-31",
+        "open": 775.2000122070312,
+        "high": 784.75,
+        "low": 765.510009765625,
+        "close": 773.4400024414062,
+        "volume": 38831100
+      },
+      {
+        "date": "2025-08-01",
+        "open": 760.72998046875,
+        "high": 766.0,
+        "low": 745.3099975585938,
+        "close": 750.010009765625,
+        "volume": 19028700
+      },
+      {
+        "date": "2025-08-04",
+        "open": 760.0,
+        "high": 776.8499755859375,
+        "low": 758.4099731445312,
+        "close": 776.3699951171875,
+        "volume": 15763800
+      }
+    ],
+    "last_updated": "2025-08-05T13:03:53.750175"
+  },
+  {
+    "symbol": "NFLX",
+    "name": "Netflix, Inc.",
+    "current_price": 1170.989990234375,
+    "change": 12.3900146484375,
+    "change_percent": 1.0693953831797305,
+    "five_day_change": -0.30733742777082,
+    "thirty_day_change": -9.19883417843817,
+    "previous_close": 1158.6,
+    "open": 1167.65,
+    "day_low": 1162.64,
+    "day_high": 1177.0,
+    "volume": 2236256,
+    "avg_volume": 3388167,
+    "market_cap": 497584111616,
+    "pe_ratio": 49.999573,
+    "forward_pe": 49.242638,
+    "price_to_book": 19.941587,
+    "dividend_yield": 0,
+    "beta": 1.589,
+    "fifty_two_week_low": 600.62,
+    "fifty_two_week_high": 1341.15,
+    "fifty_day_avg": 1231.2844,
+    "two_hundred_day_avg": 1010.6809,
+    "eps": 23.42,
+    "forward_eps": 23.78,
+    "revenue": 41693184000,
+    "profit_margins": 0.24579,
+    "return_on_equity": 0.43548,
+    "debt_to_equity": 67.866,
+    "current_ratio": 1.341,
+    "quick_ratio": 1.115,
+    "free_cashflow": 22694656000,
+    "operating_cashflow": 9070451712,
+    "total_cash": 8390519808,
+    "total_debt": 16933966848,
+    "shares_outstanding": 424926016,
+    "float_shares": 421998603,
+    "shares_short": 6195865,
+    "short_ratio": 2.04,
+    "held_percent_insiders": 0.00558,
+    "held_percent_institutions": 0.86735,
+    "target_mean_price": 1350.316,
+    "target_median_price": 1405.0,
+    "target_high_price": 1600.0,
+    "target_low_price": 750.0,
+    "recommendation_mean": 2.0,
+    "recommendation_key": "buy",
+    "number_of_analyst_opinions": 40,
+    "industry": "Entertainment",
+    "sector": "Communication Services",
+    "website": "https://www.netflix.com",
+    "business_summary": "Netflix, Inc. provides entertainment services. The company offers television (TV) series, documentaries, feature films, and games across various genres and languages. It also provides members the ability to receive streaming content through a host of internet-connected devices, including TVs, digital video players, TV set-top boxes, and mobile devices. The company operates approximately in 190 countries. Netflix, Inc. was incorporated in 1997 and is headquartered in Los Gatos, California.",
+    "employees": 14000,
+    "country": "United States",
+    "city": "Los Gatos",
+    "state": "CA",
+    "phone": "(408) 540-3700",
+    "historical_data": [
+      {
+        "date": "2025-07-07",
+        "open": 1295.0,
+        "high": 1295.0,
+        "low": 1276.02001953125,
+        "close": 1289.6199951171875,
+        "volume": 2273700
+      },
+      {
+        "date": "2025-07-08",
+        "open": 1290.9000244140625,
+        "high": 1293.25,
+        "low": 1260.0,
+        "close": 1275.31005859375,
+        "volume": 3292500
+      },
+      {
+        "date": "2025-07-09",
+        "open": 1273.989990234375,
+        "high": 1288.2900390625,
+        "low": 1266.239990234375,
+        "close": 1288.280029296875,
+        "volume": 2384500
+      },
+      {
+        "date": "2025-07-10",
+        "open": 1285.5,
+        "high": 1289.5999755859375,
+        "low": 1246.010009765625,
+        "close": 1250.5899658203125,
+        "volume": 4230800
+      },
+      {
+        "date": "2025-07-11",
+        "open": 1259.7900390625,
+        "high": 1261.0,
+        "low": 1231.300048828125,
+        "close": 1245.1099853515625,
+        "volume": 3957200
+      },
+      {
+        "date": "2025-07-14",
+        "open": 1244.9100341796875,
+        "high": 1270.489990234375,
+        "low": 1240.0,
+        "close": 1261.949951171875,
+        "volume": 2781000
+      },
+      {
+        "date": "2025-07-15",
+        "open": 1262.0,
+        "high": 1271.219970703125,
+        "low": 1243.239990234375,
+        "close": 1260.27001953125,
+        "volume": 2801700
+      },
+      {
+        "date": "2025-07-16",
+        "open": 1261.7099609375,
+        "high": 1271.0,
+        "low": 1249.8199462890625,
+        "close": 1250.31005859375,
+        "volume": 3227000
+      },
+      {
+        "date": "2025-07-17",
+        "open": 1253.0,
+        "high": 1277.5,
+        "low": 1244.800048828125,
+        "close": 1274.1700439453125,
+        "volume": 6469900
+      },
+      {
+        "date": "2025-07-18",
+        "open": 1241.9599609375,
+        "high": 1246.5,
+        "low": 1201.010009765625,
+        "close": 1209.239990234375,
+        "volume": 10693300
+      },
+      {
+        "date": "2025-07-21",
+        "open": 1206.0,
+        "high": 1237.0999755859375,
+        "low": 1198.0,
+        "close": 1233.27001953125,
+        "volume": 5627600
+      },
+      {
+        "date": "2025-07-22",
+        "open": 1230.3800048828125,
+        "high": 1232.3699951171875,
+        "low": 1187.5,
+        "close": 1190.0799560546875,
+        "volume": 5063000
+      },
+      {
+        "date": "2025-07-23",
+        "open": 1189.81005859375,
+        "high": 1192.6199951171875,
+        "low": 1173.5999755859375,
+        "close": 1176.780029296875,
+        "volume": 4504300
+      },
+      {
+        "date": "2025-07-24",
+        "open": 1177.800048828125,
+        "high": 1183.5,
+        "low": 1162.6600341796875,
+        "close": 1180.760009765625,
+        "volume": 3845600
+      },
+      {
+        "date": "2025-07-25",
+        "open": 1178.4200439453125,
+        "high": 1187.3199462890625,
+        "low": 1174.3800048828125,
+        "close": 1180.489990234375,
+        "volume": 2629300
+      },
+      {
+        "date": "2025-07-28",
+        "open": 1181.199951171875,
+        "high": 1197.7900390625,
+        "low": 1168.530029296875,
+        "close": 1174.5999755859375,
+        "volume": 3447000
+      },
+      {
+        "date": "2025-07-29",
+        "open": 1179.0,
+        "high": 1179.5999755859375,
+        "low": 1163.2900390625,
+        "close": 1168.739990234375,
+        "volume": 2752500
+      },
+      {
+        "date": "2025-07-30",
+        "open": 1168.550048828125,
+        "high": 1184.8499755859375,
+        "low": 1166.0999755859375,
+        "close": 1184.199951171875,
+        "volume": 2922700
+      },
+      {
+        "date": "2025-07-31",
+        "open": 1184.800048828125,
+        "high": 1190.0,
+        "low": 1157.739990234375,
+        "close": 1159.4000244140625,
+        "volume": 3712900
+      },
+      {
+        "date": "2025-08-01",
+        "open": 1163.010009765625,
+        "high": 1178.510009765625,
+        "low": 1152.8499755859375,
+        "close": 1158.5999755859375,
+        "volume": 3891000
+      },
+      {
+        "date": "2025-08-04",
+        "open": 1167.6500244140625,
+        "high": 1177.0,
+        "low": 1162.6199951171875,
+        "close": 1170.989990234375,
+        "volume": 2241600
+      }
+    ],
+    "last_updated": "2025-08-05T13:03:54.936525"
+  },
+  {
+    "symbol": "AMD",
+    "name": "Advanced Micro Devices, Inc.",
+    "current_price": 176.77999877929688,
+    "change": 5.0800018310546875,
+    "change_percent": 2.958649925070191,
+    "five_day_change": 1.7966112238820868,
+    "thirty_day_change": 31.142429359901737,
+    "previous_close": 171.651,
+    "open": 174.605,
+    "day_low": 173.56,
+    "day_high": 177.86,
+    "volume": 51648217,
+    "avg_volume": 51600387,
+    "market_cap": 286631100416,
+    "pe_ratio": 129.98529,
+    "forward_pe": 34.662746,
+    "price_to_book": 4.935645,
+    "dividend_yield": 0,
+    "beta": 1.94,
+    "fifty_two_week_low": 76.48,
+    "fifty_two_week_high": 182.5,
+    "fifty_day_avg": 139.0506,
+    "two_hundred_day_avg": 123.56315,
+    "eps": 1.36,
+    "forward_eps": 5.1,
+    "revenue": 27750000640,
+    "profit_margins": 0.080249995,
+    "return_on_equity": 0.03904,
+    "debt_to_equity": 8.174,
+    "current_ratio": 2.803,
+    "quick_ratio": 1.765,
+    "free_cashflow": 3355624960,
+    "operating_cashflow": 3459000064,
+    "total_cash": 7310000128,
+    "total_debt": 4730999808,
+    "shares_outstanding": 1621400064,
+    "float_shares": 1610070580,
+    "shares_short": 44717085,
+    "short_ratio": 0.76,
+    "held_percent_insiders": 0.0053,
+    "held_percent_institutions": 0.68057996,
+    "target_mean_price": 155.96222,
+    "target_median_price": 149.0,
+    "target_high_price": 223.0,
+    "target_low_price": 111.0,
+    "recommendation_mean": 1.73077,
+    "recommendation_key": "buy",
+    "number_of_analyst_opinions": 45,
+    "industry": "Semiconductors",
+    "sector": "Technology",
+    "website": "https://www.amd.com",
+    "business_summary": "Advanced Micro Devices, Inc. operates as a semiconductor company worldwide. It operates through three segments: Data Center, Client and Gaming, and Embedded. The company offers artificial intelligence (AI) accelerators, x86 microprocessors, and graphics processing units (GPUs) as standalone devices or as incorporated into accelerated processing units, chipsets, and data center and professional GPUs; and embedded processors and semi-custom system-on-chip (SoC) products, microprocessor and SoC development services and technology, data processing units, field programmable gate arrays (FPGA), system on modules, smart network interface cards, and adaptive SoC products. It provides processors under the AMD Ryzen, AMD Ryzen AI, AMD Ryzen PRO, AMD Ryzen Threadripper, AMD Ryzen Threadripper PRO, AMD Athlon, and AMD PRO A-Series brands; graphics under the AMD Radeon graphics and AMD Embedded Radeon graphics; and professional graphics under the AMD Radeon Pro graphics brand. The company offers data center graphics under the AMD Instinct accelerators and Radeon PRO V-series brands; server microprocessors under the AMD EPYC brand; low power solutions under the AMD Athlon, AMD Geode, AMD Ryzen, AMD EPYC, and AMD R-Series and G-Series brands; FPGA products under the Virtex-6, Virtex-7, Virtex UltraScale+, Kintex-7, Kintex UltraScale, Kintex UltraScale+, Artix-7, Artix UltraScale+, Spartan-6, and Spartan-7 brands; adaptive SOCs under the Zynq-7000, Zynq UltraScale+ MPSoC, Zynq UltraScale+ RFSoCs, Versal HBM, Versal Premium, Versal Prime, Versal AI Core, Versal AI Edge, Vitis, and Vivado brands; and compute and network acceleration board products under the Alveo and Pensando brands. It serves original equipment and design manufacturers, public cloud service providers, system integrators, independent distributors, and add-in-board manufacturers through its direct sales force and sales representatives. It also provides AI and general-purpose compute infrastructure for hyperscale providers. The company was incorporated in 1969 and is headquartered in Santa Clara, California.",
+    "employees": 28000,
+    "country": "United States",
+    "city": "Santa Clara",
+    "state": "CA",
+    "phone": "408 749 4000",
+    "historical_data": [
+      {
+        "date": "2025-07-07",
+        "open": 136.55999755859375,
+        "high": 137.44000244140625,
+        "low": 133.5,
+        "close": 134.8000030517578,
+        "volume": 37395000
+      },
+      {
+        "date": "2025-07-08",
+        "open": 137.32000732421875,
+        "high": 139.14999389648438,
+        "low": 135.91000366210938,
+        "close": 137.82000732421875,
+        "volume": 36124600
+      },
+      {
+        "date": "2025-07-09",
+        "open": 138.69000244140625,
+        "high": 140.64999389648438,
+        "low": 137.58999633789062,
+        "close": 138.41000366210938,
+        "volume": 37013100
+      },
+      {
+        "date": "2025-07-10",
+        "open": 143.0,
+        "high": 145.82000732421875,
+        "low": 141.85000610351562,
+        "close": 144.16000366210938,
+        "volume": 61101500
+      },
+      {
+        "date": "2025-07-11",
+        "open": 142.60000610351562,
+        "high": 147.39999389648438,
+        "low": 141.60000610351562,
+        "close": 146.4199981689453,
+        "volume": 50049200
+      },
+      {
+        "date": "2025-07-14",
+        "open": 145.08999633789062,
+        "high": 147.5800018310547,
+        "low": 141.89999389648438,
+        "close": 146.24000549316406,
+        "volume": 44718600
+      },
+      {
+        "date": "2025-07-15",
+        "open": 153.75,
+        "high": 158.67999267578125,
+        "low": 153.55999755859375,
+        "close": 155.61000061035156,
+        "volume": 93370100
+      },
+      {
+        "date": "2025-07-16",
+        "open": 155.30999755859375,
+        "high": 160.36000061035156,
+        "low": 152.85000610351562,
+        "close": 160.0800018310547,
+        "volume": 59492800
+      },
+      {
+        "date": "2025-07-17",
+        "open": 161.80999755859375,
+        "high": 161.9600067138672,
+        "low": 158.67999267578125,
+        "close": 160.41000366210938,
+        "volume": 50605100
+      },
+      {
+        "date": "2025-07-18",
+        "open": 159.58999633789062,
+        "high": 160.8300018310547,
+        "low": 155.80999755859375,
+        "close": 156.99000549316406,
+        "volume": 48859800
+      },
+      {
+        "date": "2025-07-21",
+        "open": 157.6199951171875,
+        "high": 160.33999633789062,
+        "low": 156.9199981689453,
+        "close": 157.0,
+        "volume": 39021100
+      },
+      {
+        "date": "2025-07-22",
+        "open": 156.1999969482422,
+        "high": 156.22999572753906,
+        "low": 149.33999633789062,
+        "close": 154.72000122070312,
+        "volume": 49028000
+      },
+      {
+        "date": "2025-07-23",
+        "open": 156.32000732421875,
+        "high": 159.4499969482422,
+        "low": 156.0,
+        "close": 158.64999389648438,
+        "volume": 41510900
+      },
+      {
+        "date": "2025-07-24",
+        "open": 159.1199951171875,
+        "high": 163.92999267578125,
+        "low": 158.36000061035156,
+        "close": 162.1199951171875,
+        "volume": 48440100
+      },
+      {
+        "date": "2025-07-25",
+        "open": 163.50999450683594,
+        "high": 167.17999267578125,
+        "low": 162.36000061035156,
+        "close": 166.47000122070312,
+        "volume": 53432300
+      },
+      {
+        "date": "2025-07-28",
+        "open": 169.0800018310547,
+        "high": 174.6999969482422,
+        "low": 168.6699981689453,
+        "close": 173.66000366210938,
+        "volume": 68267800
+      },
+      {
+        "date": "2025-07-29",
+        "open": 175.2100067138672,
+        "high": 182.30999755859375,
+        "low": 174.67999267578125,
+        "close": 177.44000244140625,
+        "volume": 108154800
+      },
+      {
+        "date": "2025-07-30",
+        "open": 175.61000061035156,
+        "high": 180.3699951171875,
+        "low": 173.8000030517578,
+        "close": 179.50999450683594,
+        "volume": 64820300
+      },
+      {
+        "date": "2025-07-31",
+        "open": 182.02000427246094,
+        "high": 182.5,
+        "low": 173.0,
+        "close": 176.30999755859375,
+        "volume": 71765300
+      },
+      {
+        "date": "2025-08-01",
+        "open": 170.16000366210938,
+        "high": 174.39999389648438,
+        "low": 166.82000732421875,
+        "close": 171.6999969482422,
+        "volume": 75396100
+      },
+      {
+        "date": "2025-08-04",
+        "open": 174.61000061035156,
+        "high": 177.86000061035156,
+        "low": 173.55999755859375,
+        "close": 176.77999877929688,
+        "volume": 52418000
+      }
+    ],
+    "last_updated": "2025-08-05T13:03:56.141208"
+  },
+  {
+    "symbol": "INTC",
+    "name": "Intel Corporation",
+    "current_price": 19.5,
+    "change": 0.1900005340576172,
+    "change_percent": 0.9839489348134202,
+    "five_day_change": -5.705997523029298,
+    "thirty_day_change": -11.363636363636363,
+    "previous_close": 19.31,
+    "open": 19.51,
+    "day_low": 19.35,
+    "day_high": 19.59,
+    "volume": 68747556,
+    "avg_volume": 81756493,
+    "market_cap": 85351497728,
+    "pe_ratio": 0,
+    "forward_pe": 20.103092,
+    "price_to_book": 0.871976,
+    "dividend_yield": 0,
+    "beta": 1.218,
+    "fifty_two_week_low": 17.67,
+    "fifty_two_week_high": 27.55,
+    "fifty_day_avg": 21.5022,
+    "two_hundred_day_avg": 21.7133,
+    "eps": -4.77,
+    "forward_eps": 0.97,
+    "revenue": 53070000128,
+    "profit_margins": -0.38636002,
+    "return_on_equity": -0.18616,
+    "debt_to_equity": 47.997,
+    "current_ratio": 1.24,
+    "quick_ratio": 0.674,
+    "free_cashflow": -8320625152,
+    "operating_cashflow": 10081999872,
+    "total_cash": 21205999616,
+    "total_debt": 50757001216,
+    "shares_outstanding": 4376999936,
+    "float_shares": 4369165170,
+    "shares_short": 121707181,
+    "short_ratio": 1.45,
+    "held_percent_insiders": 0.00083,
+    "held_percent_institutions": 0.67684,
+    "target_mean_price": 21.94714,
+    "target_median_price": 22.0,
+    "target_high_price": 28.0,
+    "target_low_price": 14.0,
+    "recommendation_mean": 3.02222,
+    "recommendation_key": "hold",
+    "number_of_analyst_opinions": 35,
+    "industry": "Semiconductors",
+    "sector": "Technology",
+    "website": "https://www.intel.com",
+    "business_summary": "Intel Corporation designs, develops, manufactures, markets, and sells computing and related products and services worldwide. It operates through Intel Products, Intel Foundry, and All Other segments. The company offers microprocessor and chipset, stand-alone SoC, and multichip package; Computer Systems and Devices; hardware products comprising CPUs, graphics processing units (GPUs), accelerators, and field programmable gate arrays (FPGAs); and memory and storage, connectivity and networking, and other semiconductor products. It also offers silicon and software products; and optimization solutions for workloads, such as AI, cryptography, security, storage, networking, and leverages various features supporting diverse compute environments. In addition, the company provides driving assistance and self-driving solutions; advanced process technologies enabled by an ecosystem of electronic design automation tools, intellectual property, and design services, as well as systems of chips, including advanced packaging technologies, software, and system. Further, it delivers and deploys intelligent edge platforms that allow developers to achieve agility and drive automation using AI for efficient operations with data integrity, as well as provides hardware and software platforms, tools, and ecosystem partnerships for digital transformation from the cloud to edge. The company serves original equipment manufacturers, original design manufacturers, cloud service providers, and other manufacturers and service providers. Intel Corporation was incorporated in 1968 and is headquartered in Santa Clara, California.",
+    "employees": 108900,
+    "country": "United States",
+    "city": "Santa Clara",
+    "state": "CA",
+    "phone": "408 765 8080",
+    "historical_data": [
+      {
+        "date": "2025-07-07",
+        "open": 22.209999084472656,
+        "high": 22.389999389648438,
+        "low": 21.860000610351562,
+        "close": 22.0,
+        "volume": 80725200
+      },
+      {
+        "date": "2025-07-08",
+        "open": 22.18000030517578,
+        "high": 23.790000915527344,
+        "low": 22.1299991607666,
+        "close": 23.59000015258789,
+        "volume": 119545500
+      },
+      {
+        "date": "2025-07-09",
+        "open": 23.290000915527344,
+        "high": 23.530000686645508,
+        "low": 23.1299991607666,
+        "close": 23.440000534057617,
+        "volume": 70247700
+      },
+      {
+        "date": "2025-07-10",
+        "open": 23.6299991607666,
+        "high": 24.040000915527344,
+        "low": 23.479999542236328,
+        "close": 23.81999969482422,
+        "volume": 54599800
+      },
+      {
+        "date": "2025-07-11",
+        "open": 23.559999465942383,
+        "high": 23.65999984741211,
+        "low": 23.15999984741211,
+        "close": 23.43000030517578,
+        "volume": 49367900
+      },
+      {
+        "date": "2025-07-14",
+        "open": 23.239999771118164,
+        "high": 23.399999618530273,
+        "low": 22.8799991607666,
+        "close": 23.299999237060547,
+        "volume": 48420500
+      },
+      {
+        "date": "2025-07-15",
+        "open": 23.56999969482422,
+        "high": 23.780000686645508,
+        "low": 22.899999618530273,
+        "close": 22.920000076293945,
+        "volume": 66099400
+      },
+      {
+        "date": "2025-07-16",
+        "open": 22.989999771118164,
+        "high": 23.1299991607666,
+        "low": 22.25,
+        "close": 22.690000534057617,
+        "volume": 58865900
+      },
+      {
+        "date": "2025-07-17",
+        "open": 22.65999984741211,
+        "high": 23.049999237060547,
+        "low": 22.59000015258789,
+        "close": 22.799999237060547,
+        "volume": 49384000
+      },
+      {
+        "date": "2025-07-18",
+        "open": 23.219999313354492,
+        "high": 23.59000015258789,
+        "low": 22.899999618530273,
+        "close": 23.100000381469727,
+        "volume": 60195600
+      },
+      {
+        "date": "2025-07-21",
+        "open": 23.399999618530273,
+        "high": 23.829999923706055,
+        "low": 23.15999984741211,
+        "close": 23.260000228881836,
+        "volume": 61658000
+      },
+      {
+        "date": "2025-07-22",
+        "open": 23.34000015258789,
+        "high": 23.540000915527344,
+        "low": 23.079999923706055,
+        "close": 23.239999771118164,
+        "volume": 53969800
+      },
+      {
+        "date": "2025-07-23",
+        "open": 23.260000228881836,
+        "high": 23.6200008392334,
+        "low": 22.920000076293945,
+        "close": 23.489999771118164,
+        "volume": 68711700
+      },
+      {
+        "date": "2025-07-24",
+        "open": 23.489999771118164,
+        "high": 23.579999923706055,
+        "low": 22.600000381469727,
+        "close": 22.6299991607666,
+        "volume": 131963300
+      },
+      {
+        "date": "2025-07-25",
+        "open": 20.68000030517578,
+        "high": 21.049999237060547,
+        "low": 20.360000610351562,
+        "close": 20.700000762939453,
+        "volume": 245077700
+      },
+      {
+        "date": "2025-07-28",
+        "open": 20.81999969482422,
+        "high": 21.290000915527344,
+        "low": 20.649999618530273,
+        "close": 20.68000030517578,
+        "volume": 86105600
+      },
+      {
+        "date": "2025-07-29",
+        "open": 20.690000534057617,
+        "high": 20.850000381469727,
+        "low": 20.34000015258789,
+        "close": 20.40999984741211,
+        "volume": 100831500
+      },
+      {
+        "date": "2025-07-30",
+        "open": 20.43000030517578,
+        "high": 20.6200008392334,
+        "low": 20.079999923706055,
+        "close": 20.34000015258789,
+        "volume": 67420300
+      },
+      {
+        "date": "2025-07-31",
+        "open": 20.170000076293945,
+        "high": 20.229999542236328,
+        "low": 19.65999984741211,
+        "close": 19.799999237060547,
+        "volume": 90665200
+      },
+      {
+        "date": "2025-08-01",
+        "open": 19.5,
+        "high": 19.549999237060547,
+        "low": 18.969999313354492,
+        "close": 19.309999465942383,
+        "volume": 86496100
+      },
+      {
+        "date": "2025-08-04",
+        "open": 19.520000457763672,
+        "high": 19.59000015258789,
+        "low": 19.350000381469727,
+        "close": 19.5,
+        "volume": 68985600
+      }
+    ],
+    "last_updated": "2025-08-05T13:03:57.401765"
   }
 ]

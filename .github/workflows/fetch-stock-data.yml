@@ -2,7 +2,7 @@ name: Fetch Stock Data
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight UTC
+    - cron: '*/5 * * * *'  # Runs every 5 minutes
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
@@ -10,17 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yfinance
+          pip install yfinance pandas
 
       - name: Run stock data fetch script
         run: python fetch_stock_data.py
@@ -29,6 +29,12 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git add data/stocks.json
-          git commit -m 'Update stock data' || echo "No changes to commit"
+          git add data/
+          git commit -m "Update stock data - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "No changes to commit"
           git push
+
+      - name: Create summary comment
+        if: always()
+        run: |
+          echo "Stock data fetch completed at $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          echo "Check the data/ directory for updated stock information."

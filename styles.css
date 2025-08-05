@@ -1,0 +1,7 @@
+/* Custom styles to complement Tailwind */
+table tr:hover {
+    background-color: #f3f4f6; /* Tailwind gray-100 */
+}
+.dark table tr:hover {
+    background-color: #1f2937; /* Tailwind gray-800 */
+}

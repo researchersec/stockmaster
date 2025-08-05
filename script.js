@@ -1,24 +1,57 @@
+// ===== ULTIMATE STOCK DASHBOARD - ENHANCED JAVASCRIPT =====
+
+// Global state management
+const AppState = {
+    stocks: [],
+    summary: {},
+    theme: localStorage.theme || 'light',
+    sortBy: 'symbol',
+    sortOrder: 'asc',
+    searchQuery: '',
+    viewMode: 'table',
+    notifications: [],
+    lastUpdate: null,
+    connectionStatus: 'connected',
+    marketStatus: 'open',
+    aiInsights: {},
+    userPreferences: JSON.parse(localStorage.getItem('userPreferences') || '{}')
+};
+
+// Initialize the application
 document.addEventListener('DOMContentLoaded', () => {
-    // Theme toggle functionality
-    setupThemeToggle();
+    console.log('🚀 Ultimate Stock Dashboard Initializing...');
     
-    // Load and display stock data
+    // Initialize all modules
+    initializeTheme();
+    initializeParticles();
+    initializeAOS();
+    initializeEventListeners();
+    initializePWA();
+    initializeNotifications();
+    initializeAIInsights();
+    
+    // Load initial data
     loadStockData();
     
-    // Set up modal functionality
-    setupModal();
+    // Set up real-time updates
+    setupRealTimeUpdates();
     
-    // Auto-refresh data every 30 seconds
-    setInterval(loadStockData, 30000);
+    // Initialize search and sort functionality
+    initializeSearchAndSort();
+    
+    console.log('✅ Dashboard initialized successfully!');
 });
 
-function setupThemeToggle() {
+// Theme Management
+function initializeTheme() {
     const themeToggle = document.getElementById('theme-toggle');
     const sunIcon = document.getElementById('sun');
     const moonIcon = document.getElementById('moon');
     
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    // Set initial theme
+    if (AppState.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark');
+        AppState.theme = 'dark';
         sunIcon.classList.add('hidden');
         moonIcon.classList.remove('hidden');
     } else {
@@ -29,104 +62,275 @@ function setupThemeToggle() {
     themeToggle.addEventListener('click', () => {
         document.documentElement.classList.toggle('dark');
         if (document.documentElement.classList.contains('dark')) {
+            AppState.theme = 'dark';
             localStorage.theme = 'dark';
             sunIcon.classList.add('hidden');
             moonIcon.classList.remove('hidden');
         } else {
+            AppState.theme = 'light';
             localStorage.theme = 'light';
             sunIcon.classList.remove('hidden');
             moonIcon.classList.add('hidden');
         }
+        
+        // Trigger theme change event
+        document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: AppState.theme } }));
     });
 }
 
+// Particles Background
+function initializeParticles() {
+    if (typeof particlesJS !== 'undefined') {
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 50, density: { enable: true, value_area: 800 } },
+                color: { value: '#3B82F6' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.3, random: false },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#3B82F6',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+    }
+}
+
+// AOS (Animate On Scroll) Initialization
+function initializeAOS() {
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    }
+}
+
+// Event Listeners
+function initializeEventListeners() {
+    // Modal functionality
+    setupModal();
+    
+    // Search functionality
+    const searchInput = document.getElementById('stock-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', debounce(handleSearch, 300));
+    }
+    
+    // Sort functionality
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', handleSort);
+    }
+    
+    // View toggle
+    const viewToggle = document.getElementById('view-toggle');
+    if (viewToggle) {
+        viewToggle.addEventListener('click', toggleViewMode);
+    }
+    
+    // AI Insights refresh
+    const refreshInsights = document.getElementById('refresh-insights');
+    if (refreshInsights) {
+        refreshInsights.addEventListener('click', refreshAIInsights);
+    }
+    
+    // Keyboard shortcuts
+    document.addEventListener('keydown', handleKeyboardShortcuts);
+    
+    // Window events
+    window.addEventListener('online', handleConnectionChange);
+    window.addEventListener('offline', handleConnectionChange);
+    window.addEventListener('focus', handleWindowFocus);
+}
+
+// Enhanced Modal Setup
 function setupModal() {
     const modal = document.getElementById('stock-modal');
     const closeModal = document.getElementById('close-modal');
     
-    closeModal.addEventListener('click', () => {
-        modal.classList.add('hidden');
-    });
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
+    if (closeModal) {
+        closeModal.addEventListener('click', () => {
             modal.classList.add('hidden');
-        }
-    });
+            document.body.style.overflow = 'auto';
+        });
+    }
     
-    // Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-            modal.classList.add('hidden');
-        }
-    });
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
 }
 
-function loadStockData() {
-    Promise.all([
-        fetch('data/stocks.json').then(response => response.json()),
-        fetch('data/summary.json').then(response => response.json())
-    ])
-    .then(([stockData, summaryData]) => {
-        displayStockTable(stockData);
-        displayMarketSummary(summaryData);
-        updateLastUpdated(summaryData.last_updated);
-    })
-    .catch(error => {
-        console.error('Error fetching stock data:', error);
-        document.getElementById('stock-table').innerHTML = 
-            '<tr><td colspan="7" class="px-6 py-4 text-center text-red-500">Error loading stock data</td></tr>';
-    });
+// Enhanced Stock Data Loading
+async function loadStockData() {
+    try {
+        showLoadingState(true);
+        
+        const [stockResponse, summaryResponse] = await Promise.all([
+            fetch('data/stocks.json').then(response => {
+                if (!response.ok) throw new Error('Failed to fetch stock data');
+                return response.json();
+            }),
+            fetch('data/summary.json').then(response => {
+                if (!response.ok) throw new Error('Failed to fetch summary data');
+                return response.json();
+            })
+        ]);
+        
+        AppState.stocks = stockResponse;
+        AppState.summary = summaryResponse;
+        AppState.lastUpdate = new Date();
+        
+        // Update UI
+        displayStockTable(AppState.stocks);
+        displayMarketSummary(AppState.summary);
+        updateLastUpdated(AppState.summary.last_updated);
+        updateConnectionStatus('connected');
+        
+        // Generate AI insights
+        generateAIInsights();
+        
+        // Update next update time
+        updateNextUpdateTime();
+        
+        showLoadingState(false);
+        
+        // Trigger data loaded event
+        document.dispatchEvent(new CustomEvent('dataLoaded', { 
+            detail: { stocks: AppState.stocks, summary: AppState.summary } 
+        }));
+        
+    } catch (error) {
+        console.error('Error loading stock data:', error);
+        showErrorState('Failed to load stock data. Please try again later.');
+        updateConnectionStatus('disconnected');
+        showLoadingState(false);
+    }
 }
 
+// Enhanced Stock Table Display
 function displayStockTable(stockData) {
     const tableBody = document.getElementById('stock-table');
+    if (!tableBody) return;
+    
+    // Apply search and sort filters
+    let filteredData = applyFilters(stockData);
+    
     tableBody.innerHTML = '';
     
-    stockData.forEach(stock => {
+    if (filteredData.length === 0) {
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="7" class="px-6 py-8 text-center">
+                    <div class="empty-state">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                        <p class="text-gray-500 dark:text-gray-400">No stocks found matching your search criteria</p>
+                    </div>
+                </td>
+            </tr>
+        `;
+        return;
+    }
+    
+    filteredData.forEach((stock, index) => {
         const changeClass = stock.change_percent >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400';
         const changeIcon = stock.change_percent >= 0 ? '↗' : '↘';
+        const sentimentClass = getSentimentClass(stock.change_percent);
         
         const row = document.createElement('tr');
-        row.className = 'hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors';
+        row.className = `hover:bg-gray-50/80 dark:hover:bg-gray-700/80 transition-all duration-200 animate-fade-in`;
+        row.style.animationDelay = `${index * 50}ms`;
         
         row.innerHTML = `
             <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
                     <div class="flex-shrink-0">
-                        <div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
-                            <span class="text-sm font-medium text-blue-600 dark:text-blue-400">${stock.symbol.charAt(0)}</span>
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                            <span class="text-white font-bold text-sm">${stock.symbol.charAt(0)}</span>
                         </div>
                     </div>
                     <div class="ml-4">
-                        <div class="text-sm font-medium text-gray-900 dark:text-white">${stock.symbol}</div>
+                        <div class="text-sm font-semibold text-gray-900 dark:text-white">${stock.symbol}</div>
                         <div class="text-sm text-gray-500 dark:text-gray-400">${stock.name}</div>
                     </div>
                 </div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm font-medium text-gray-900 dark:text-white">$${stock.current_price.toFixed(2)}</div>
-                <div class="text-sm text-gray-500 dark:text-gray-400">${stock.sector}</div>
+                <div class="text-lg font-bold text-gray-900 dark:text-white">$${stock.current_price.toFixed(2)}</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">${stock.sector || 'N/A'}</div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap">
                 <div class="flex items-center">
-                    <span class="text-sm font-medium ${changeClass}">${changeIcon} ${stock.change_percent.toFixed(2)}%</span>
-                    <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">(${stock.change.toFixed(2)})</span>
+                    <span class="text-lg font-semibold ${changeClass}">${changeIcon} ${stock.change_percent.toFixed(2)}%</span>
+                    <span class="ml-2 px-2 py-1 text-xs rounded-full ${sentimentClass}">${getSentimentLabel(stock.change_percent)}</span>
                 </div>
+                <div class="text-sm text-gray-500 dark:text-gray-400">$${stock.change.toFixed(2)}</div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
-                ${formatMarketCap(stock.market_cap)}
+            <td class="px-6 py-4 whitespace-nowrap">
+                <div class="text-sm font-medium text-gray-900 dark:text-white">${formatMarketCap(stock.market_cap)}</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">${stock.pe_ratio ? `P/E: ${stock.pe_ratio.toFixed(2)}` : 'N/A'}</div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
-                ${stock.pe_ratio ? stock.pe_ratio.toFixed(2) : 'N/A'}
+            <td class="px-6 py-4 whitespace-nowrap hidden lg:table-cell">
+                <div class="text-sm text-gray-900 dark:text-white">${stock.pe_ratio ? stock.pe_ratio.toFixed(2) : 'N/A'}</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">${stock.forward_pe ? `Fwd: ${stock.forward_pe.toFixed(2)}` : ''}</div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
-                ${formatVolume(stock.volume)}
+            <td class="px-6 py-4 whitespace-nowrap hidden md:table-cell">
+                <div class="text-sm text-gray-900 dark:text-white">${formatVolume(stock.volume)}</div>
+                <div class="text-xs text-gray-500 dark:text-gray-400">Avg: ${formatVolume(stock.avg_volume)}</div>
             </td>
             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <button onclick="showStockDetails('${stock.symbol}')" class="text-blue-600 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300">
-                    Details
-                </button>
+                <div class="flex items-center space-x-2">
+                    <button onclick="showStockDetails('${stock.symbol}')" 
+                            class="btn btn-primary text-xs px-3 py-1">
+                        Details
+                    </button>
+                    <button onclick="addToWatchlist('${stock.symbol}')" 
+                            class="btn btn-secondary text-xs px-3 py-1"
+                            data-tooltip="Add to Watchlist">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                        </svg>
+                    </button>
+                </div>
             </td>
         `;
         
@@ -134,252 +338,296 @@ function displayStockTable(stockData) {
     });
 }
 
+// Enhanced Market Summary Display
 function displayMarketSummary(summaryData) {
-    const marketSummary = summaryData.market_summary;
-    document.getElementById('gainers-count').textContent = marketSummary.gainers;
-    document.getElementById('losers-count').textContent = marketSummary.losers;
-    document.getElementById('total-stocks').textContent = marketSummary.total_stocks;
+    const gainersCount = document.getElementById('gainers-count');
+    const losersCount = document.getElementById('losers-count');
+    const totalStocks = document.getElementById('total-stocks');
+    const marketCapTotal = document.getElementById('market-cap-total');
+    const gainersPercent = document.getElementById('gainers-percent');
+    const losersPercent = document.getElementById('losers-percent');
     
-    const summaryText = `${marketSummary.gainers} gainers, ${marketSummary.losers} losers`;
-    document.getElementById('market-summary').textContent = summaryText;
-}
-
-function updateLastUpdated(timestamp) {
-    const date = new Date(timestamp);
-    const formattedDate = date.toLocaleString();
-    document.getElementById('last-updated').textContent = `Last updated: ${formattedDate}`;
-}
-
-function formatMarketCap(marketCap) {
-    if (marketCap >= 1e12) {
-        return `$${(marketCap / 1e12).toFixed(2)}T`;
-    } else if (marketCap >= 1e9) {
-        return `$${(marketCap / 1e9).toFixed(2)}B`;
-    } else if (marketCap >= 1e6) {
-        return `$${(marketCap / 1e6).toFixed(2)}M`;
-    } else {
-        return `$${marketCap.toLocaleString()}`;
+    if (gainersCount) gainersCount.textContent = summaryData.gainers || 0;
+    if (losersCount) losersCount.textContent = summaryData.losers || 0;
+    if (totalStocks) totalStocks.textContent = summaryData.total_stocks || 0;
+    if (marketCapTotal) marketCapTotal.textContent = formatMarketCap(summaryData.total_market_cap || 0);
+    
+    // Calculate percentages
+    const total = summaryData.total_stocks || 1;
+    const gainersPct = ((summaryData.gainers || 0) / total * 100).toFixed(1);
+    const losersPct = ((summaryData.losers || 0) / total * 100).toFixed(1);
+    
+    if (gainersPercent) gainersPercent.textContent = `+${gainersPct}%`;
+    if (losersPercent) losersPercent.textContent = `-${losersPct}%`;
+    
+    // Update market summary text
+    const marketSummary = document.getElementById('market-summary');
+    if (marketSummary) {
+        const avgChange = summaryData.average_change || 0;
+        const changeText = avgChange >= 0 ? `+${avgChange.toFixed(2)}%` : `${avgChange.toFixed(2)}%`;
+        marketSummary.textContent = `Market: ${changeText} | Vol: ${formatVolume(summaryData.total_volume || 0)}`;
     }
+}
+
+// Utility Functions
+function formatMarketCap(marketCap) {
+    if (marketCap >= 1e12) return `$${(marketCap / 1e12).toFixed(2)}T`;
+    if (marketCap >= 1e9) return `$${(marketCap / 1e9).toFixed(2)}B`;
+    if (marketCap >= 1e6) return `$${(marketCap / 1e6).toFixed(2)}M`;
+    return `$${marketCap.toLocaleString()}`;
 }
 
 function formatVolume(volume) {
-    if (volume >= 1e9) {
-        return `${(volume / 1e9).toFixed(2)}B`;
-    } else if (volume >= 1e6) {
-        return `${(volume / 1e6).toFixed(2)}M`;
-    } else if (volume >= 1e3) {
-        return `${(volume / 1e3).toFixed(2)}K`;
-    } else {
-        return volume.toLocaleString();
+    if (volume >= 1e9) return `${(volume / 1e9).toFixed(2)}B`;
+    if (volume >= 1e6) return `${(volume / 1e6).toFixed(2)}M`;
+    if (volume >= 1e3) return `${(volume / 1e3).toFixed(2)}K`;
+    return volume.toLocaleString();
+}
+
+function getSentimentClass(changePercent) {
+    if (changePercent >= 5) return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
+    if (changePercent >= 2) return 'bg-green-50 text-green-700 dark:bg-green-800 dark:text-green-300';
+    if (changePercent >= 0) return 'bg-blue-50 text-blue-700 dark:bg-blue-800 dark:text-blue-300';
+    if (changePercent >= -2) return 'bg-yellow-50 text-yellow-700 dark:bg-yellow-800 dark:text-yellow-300';
+    if (changePercent >= -5) return 'bg-red-50 text-red-700 dark:bg-red-800 dark:text-red-300';
+    return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200';
+}
+
+function getSentimentLabel(changePercent) {
+    if (changePercent >= 5) return '🚀 Strong Buy';
+    if (changePercent >= 2) return '📈 Bullish';
+    if (changePercent >= 0) return '➡️ Neutral';
+    if (changePercent >= -2) return '⚠️ Cautious';
+    if (changePercent >= -5) return '📉 Bearish';
+    return '🔥 Strong Sell';
+}
+
+// Search and Sort Functions
+function applyFilters(data) {
+    let filtered = [...data];
+    
+    // Apply search filter
+    if (AppState.searchQuery) {
+        const query = AppState.searchQuery.toLowerCase();
+        filtered = filtered.filter(stock => 
+            stock.symbol.toLowerCase().includes(query) ||
+            stock.name.toLowerCase().includes(query) ||
+            (stock.sector && stock.sector.toLowerCase().includes(query))
+        );
     }
-}
-
-function showStockDetails(symbol) {
-    fetch('data/stocks.json')
-        .then(response => response.json())
-        .then(stockData => {
-            const stock = stockData.find(s => s.symbol === symbol);
-            if (stock) {
-                displayStockModal(stock);
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching stock details:', error);
-        });
-}
-
-function displayStockModal(stock) {
-    const modal = document.getElementById('stock-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalContent = document.getElementById('modal-content');
     
-    modalTitle.textContent = `${stock.symbol} - ${stock.name}`;
-    
-    const changeClass = stock.change_percent >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400';
-    const changeIcon = stock.change_percent >= 0 ? '↗' : '↘';
-    
-    modalContent.innerHTML = `
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <!-- Price Information -->
-            <div class="space-y-4">
-                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                    <h4 class="text-lg font-semibold mb-3">Price Information</h4>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Current Price</p>
-                            <p class="text-xl font-bold">$${stock.current_price.toFixed(2)}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Change</p>
-                            <p class="text-lg font-semibold ${changeClass}">${changeIcon} ${stock.change_percent.toFixed(2)}%</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Previous Close</p>
-                            <p class="text-lg">$${stock.previous_close.toFixed(2)}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Open</p>
-                            <p class="text-lg">$${stock.open.toFixed(2)}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Day Range</p>
-                            <p class="text-lg">$${stock.day_low.toFixed(2)} - $${stock.day_high.toFixed(2)}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">52 Week Range</p>
-                            <p class="text-lg">$${stock.fifty_two_week_low.toFixed(2)} - $${stock.fifty_two_week_high.toFixed(2)}</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Company Information -->
-                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                    <h4 class="text-lg font-semibold mb-3">Company Information</h4>
-                    <div class="space-y-2">
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Sector</p>
-                            <p class="font-medium">${stock.sector || 'N/A'}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Industry</p>
-                            <p class="font-medium">${stock.industry || 'N/A'}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Employees</p>
-                            <p class="font-medium">${stock.employees ? stock.employees.toLocaleString() : 'N/A'}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Website</p>
-                            <p class="font-medium">${stock.website ? `<a href="${stock.website}" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">${stock.website}</a>` : 'N/A'}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Financial Metrics -->
-            <div class="space-y-4">
-                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                    <h4 class="text-lg font-semibold mb-3">Financial Metrics</h4>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Market Cap</p>
-                            <p class="font-medium">${formatMarketCap(stock.market_cap)}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">P/E Ratio</p>
-                            <p class="font-medium">${stock.pe_ratio ? stock.pe_ratio.toFixed(2) : 'N/A'}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Forward P/E</p>
-                            <p class="font-medium">${stock.forward_pe ? stock.forward_pe.toFixed(2) : 'N/A'}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Price to Book</p>
-                            <p class="font-medium">${stock.price_to_book ? stock.price_to_book.toFixed(2) : 'N/A'}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Dividend Yield</p>
-                            <p class="font-medium">${stock.dividend_yield ? (stock.dividend_yield * 100).toFixed(2) + '%' : 'N/A'}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Beta</p>
-                            <p class="font-medium">${stock.beta ? stock.beta.toFixed(2) : 'N/A'}</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Trading Information -->
-                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                    <h4 class="text-lg font-semibold mb-3">Trading Information</h4>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Volume</p>
-                            <p class="font-medium">${formatVolume(stock.volume)}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Avg Volume</p>
-                            <p class="font-medium">${formatVolume(stock.avg_volume)}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Shares Outstanding</p>
-                            <p class="font-medium">${formatVolume(stock.shares_outstanding)}</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Float Shares</p>
-                            <p class="font-medium">${formatVolume(stock.float_shares)}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    // Apply sort
+    filtered.sort((a, b) => {
+        let aVal = a[AppState.sortBy];
+        let bVal = b[AppState.sortBy];
         
-        <!-- Price Chart -->
-        ${stock.historical_data && stock.historical_data.length > 0 ? `
-        <div class="mt-6 bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-            <h4 class="text-lg font-semibold mb-3">30-Day Price Chart</h4>
-            <canvas id="price-chart" width="400" height="200"></canvas>
-        </div>
-        ` : ''}
+        // Handle null/undefined values
+        if (aVal === null || aVal === undefined) aVal = 0;
+        if (bVal === null || bVal === undefined) bVal = 0;
         
-        <!-- Business Summary -->
-        ${stock.business_summary ? `
-        <div class="mt-6 bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-            <h4 class="text-lg font-semibold mb-3">Business Summary</h4>
-            <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">${stock.business_summary}</p>
-        </div>
-        ` : ''}
-    `;
-    
-    modal.classList.remove('hidden');
-    
-    // Create price chart if historical data is available
-    if (stock.historical_data && stock.historical_data.length > 0) {
-        setTimeout(() => createPriceChart(stock.historical_data), 100);
-    }
-}
-
-function createPriceChart(historicalData) {
-    const ctx = document.getElementById('price-chart');
-    if (!ctx) return;
-    
-    const labels = historicalData.map(d => d.date);
-    const prices = historicalData.map(d => d.close);
-    
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Close Price',
-                data: prices,
-                borderColor: '#3B82F6',
-                backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                borderWidth: 2,
-                fill: true,
-                tension: 0.1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: false,
-                    grid: {
-                        color: 'rgba(156, 163, 175, 0.1)'
-                    }
-                },
-                x: {
-                    grid: {
-                        color: 'rgba(156, 163, 175, 0.1)'
-                    }
-                }
-            }
+        if (AppState.sortOrder === 'asc') {
+            return aVal > bVal ? 1 : -1;
+        } else {
+            return aVal < bVal ? 1 : -1;
         }
     });
+    
+    return filtered;
+}
+
+function handleSearch(e) {
+    AppState.searchQuery = e.target.value;
+    displayStockTable(AppState.stocks);
+}
+
+function handleSort(e) {
+    AppState.sortBy = e.target.value;
+    displayStockTable(AppState.stocks);
+}
+
+function toggleViewMode() {
+    AppState.viewMode = AppState.viewMode === 'table' ? 'cards' : 'table';
+    displayStockTable(AppState.stocks);
+}
+
+// Real-time Updates
+function setupRealTimeUpdates() {
+    // Auto-refresh every 30 seconds
+    setInterval(() => {
+        if (AppState.connectionStatus === 'connected') {
+            loadStockData();
+        }
+    }, 30000);
+    
+    // Update connection status every 5 seconds
+    setInterval(() => {
+        updateConnectionStatus(navigator.onLine ? 'connected' : 'disconnected');
+    }, 5000);
+}
+
+// Connection Management
+function updateConnectionStatus(status) {
+    AppState.connectionStatus = status;
+    const statusElement = document.getElementById('connection-status');
+    const statusDot = document.querySelector('#connection-status').previousElementSibling;
+    
+    if (statusElement) {
+        statusElement.textContent = status === 'connected' ? 'Live Data' : 'Offline';
+    }
+    
+    if (statusDot) {
+        statusDot.className = `w-2 h-2 rounded-full mr-2 ${status === 'connected' ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`;
+    }
+}
+
+function handleConnectionChange() {
+    updateConnectionStatus(navigator.onLine ? 'connected' : 'disconnected');
+    
+    if (navigator.onLine) {
+        showNotification('Connection restored', 'success');
+        loadStockData();
+    } else {
+        showNotification('Connection lost', 'error');
+    }
+}
+
+// Loading and Error States
+function showLoadingState(show) {
+    const loadingState = document.getElementById('loading-state');
+    const tableBody = document.getElementById('stock-table');
+    
+    if (show) {
+        if (loadingState) loadingState.classList.remove('hidden');
+        if (tableBody) tableBody.classList.add('hidden');
+    } else {
+        if (loadingState) loadingState.classList.add('hidden');
+        if (tableBody) tableBody.classList.remove('hidden');
+    }
+}
+
+function showErrorState(message) {
+    const tableBody = document.getElementById('stock-table');
+    if (tableBody) {
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="7" class="px-6 py-8 text-center">
+                    <div class="error-state">
+                        <svg class="w-16 h-16 mx-auto mb-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <p class="text-red-600 dark:text-red-400">${message}</p>
+                        <button onclick="loadStockData()" class="btn btn-primary mt-4">Retry</button>
+                    </div>
+                </td>
+            </tr>
+        `;
+    }
+}
+
+// Utility Functions
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+function updateLastUpdated(timestamp) {
+    const lastUpdated = document.getElementById('last-updated');
+    if (lastUpdated && timestamp) {
+        const date = new Date(timestamp);
+        lastUpdated.textContent = `Last updated: ${date.toLocaleTimeString()}`;
+    }
+}
+
+function updateNextUpdateTime() {
+    const nextUpdate = document.getElementById('next-update');
+    if (nextUpdate) {
+        const now = new Date();
+        const next = new Date(now.getTime() + 300000); // 5 minutes
+        nextUpdate.textContent = `Next: ${next.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
+    }
+}
+
+// Keyboard Shortcuts
+function handleKeyboardShortcuts(e) {
+    // Ctrl/Cmd + K for search
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        const searchInput = document.getElementById('stock-search');
+        if (searchInput) searchInput.focus();
+    }
+    
+    // Ctrl/Cmd + R for refresh
+    if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
+        e.preventDefault();
+        loadStockData();
+    }
+    
+    // Ctrl/Cmd + D for theme toggle
+    if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+        e.preventDefault();
+        document.getElementById('theme-toggle').click();
+    }
+}
+
+// Window Focus Handler
+function handleWindowFocus() {
+    // Refresh data when window gains focus
+    if (AppState.connectionStatus === 'connected') {
+        loadStockData();
+    }
+}
+
+// Export functions for global access
+window.showStockDetails = showStockDetails;
+window.addToWatchlist = addToWatchlist;
+window.loadStockData = loadStockData;
+
+// Placeholder functions (will be implemented in separate files)
+function showStockDetails(symbol) {
+    // Enhanced modal implementation will be in a separate file
+    console.log('Showing details for:', symbol);
+}
+
+function addToWatchlist(symbol) {
+    // Watchlist functionality will be implemented
+    showNotification(`${symbol} added to watchlist`, 'success');
+}
+
+function generateAIInsights() {
+    // AI insights will be implemented in ai-insights.js
+    console.log('Generating AI insights...');
+}
+
+function refreshAIInsights() {
+    // AI insights refresh will be implemented
+    console.log('Refreshing AI insights...');
+}
+
+function showNotification(message, type = 'info') {
+    // Notification system will be implemented in notifications.js
+    console.log('Notification:', message, type);
+}
+
+// Initialize AI Insights and Notifications (placeholder)
+function initializeAIInsights() {
+    console.log('AI Insights initialized');
+}
+
+function initializeNotifications() {
+    console.log('Notifications initialized');
+}
+
+function initializePWA() {
+    console.log('PWA initialized');
+}
+
+function initializeSearchAndSort() {
+    console.log('Search and sort initialized');
 }

@@ -11,12 +11,12 @@
     "open": 203.435,
     "day_low": 202.16,
     "day_high": 205.34,
-    "volume": 19847678,
+    "volume": 21109618,
     "avg_volume": 53679570,
-    "market_cap": 3020614795264,
-    "pe_ratio": 30.88619,
-    "forward_pe": 24.49338,
-    "price_to_book": 45.93545,
+    "market_cap": 3017127493632,
+    "pe_ratio": 30.850529,
+    "forward_pe": 24.4651,
+    "price_to_book": 45.882416,
     "dividend_yield": 0.51,
     "beta": 1.165,
     "fifty_two_week_low": 169.21,
@@ -227,7 +227,7 @@
         "volume": 75020600
       }
     ],
-    "last_updated": "2025-08-05T16:24:55.192736"
+    "last_updated": "2025-08-05T16:43:36.819731"
   },
   {
     "symbol": "MSFT",
@@ -241,12 +241,12 @@
     "open": 537.22,
     "day_low": 530.7,
     "day_high": 537.22,
-    "volume": 8290725,
+    "volume": 8611114,
     "avg_volume": 19670220,
-    "market_cap": 3961805078528,
-    "pe_ratio": 39.018303,
-    "forward_pe": 35.651505,
-    "price_to_book": 11.535582,
+    "market_cap": 3953926078464,
+    "pe_ratio": 38.940704,
+    "forward_pe": 35.5806,
+    "price_to_book": 11.51264,
     "dividend_yield": 0.62,
     "beta": 1.055,
     "fifty_two_week_low": 344.79,
@@ -457,7 +457,7 @@
         "volume": 25328300
       }
     ],
-    "last_updated": "2025-08-05T16:24:56.750840"
+    "last_updated": "2025-08-05T16:43:38.148044"
   },
   {
     "symbol": "GOOGL",
@@ -471,12 +471,12 @@
     "open": 194.71,
     "day_low": 194.61,
     "day_high": 197.8599,
-    "volume": 14459542,
+    "volume": 15051649,
     "avg_volume": 42565590,
-    "market_cap": 2368005734400,
-    "pe_ratio": 20.840084,
-    "forward_pe": 21.816963,
-    "price_to_book": 6.5196943,
+    "market_cap": 2362917781504,
+    "pe_ratio": 20.79531,
+    "forward_pe": 21.770088,
+    "price_to_book": 6.5056863,
     "dividend_yield": 0.43,
     "beta": 1.014,
     "fifty_two_week_low": 140.53,
@@ -687,7 +687,7 @@
         "volume": 31503400
       }
     ],
-    "last_updated": "2025-08-05T16:24:58.182897"
+    "last_updated": "2025-08-05T16:43:39.420849"
   },
   {
     "symbol": "AMZN",
@@ -701,12 +701,12 @@
     "open": 213.18,
     "day_low": 212.87,
     "day_high": 216.3,
-    "volume": 27463362,
+    "volume": 29058376,
     "avg_volume": 43170150,
-    "market_cap": 2296259543040,
-    "pe_ratio": 32.821648,
-    "forward_pe": 35.009754,
-    "price_to_book": 6.876497,
+    "market_cap": 2291033702400,
+    "pe_ratio": 32.746952,
+    "forward_pe": 34.93008,
+    "price_to_book": 6.8608475,
     "dividend_yield": 0,
     "beta": 1.314,
     "fifty_two_week_low": 158.54,
@@ -917,7 +917,7 @@
         "volume": 77710500
       }
     ],
-    "last_updated": "2025-08-05T16:24:59.636143"
+    "last_updated": "2025-08-05T16:43:40.719248"
   },
   {
     "symbol": "TSLA",
@@ -930,13 +930,13 @@
     "previous_close": 309.26,
     "open": 308.95,
     "day_low": 305.5,
-    "day_high": 312.45,
-    "volume": 32062276,
+    "day_high": 312.4499,
+    "volume": 33374392,
     "avg_volume": 107104419,
-    "market_cap": 990358339584,
-    "pe_ratio": 183.8593,
-    "forward_pe": 94.766975,
-    "price_to_book": 12.803678,
+    "market_cap": 990922735616,
+    "pe_ratio": 183.96408,
+    "forward_pe": 94.82099,
+    "price_to_book": 12.810975,
     "dividend_yield": 0,
     "beta": 2.331,
     "fifty_two_week_low": 191.48,
@@ -1147,7 +1147,7 @@
         "volume": 78529700
       }
     ],
-    "last_updated": "2025-08-05T16:25:01.758373"
+    "last_updated": "2025-08-05T16:43:42.011204"
   },
   {
     "symbol": "NVDA",
@@ -1161,12 +1161,12 @@
     "open": 179.62,
     "day_low": 175.9,
     "day_high": 180.26,
-    "volume": 88901147,
+    "volume": 93069232,
     "avg_volume": 193026266,
-    "market_cap": 4339041828864,
-    "pe_ratio": 57.39355,
-    "forward_pe": 43.184467,
-    "price_to_book": 51.75102,
+    "market_cap": 4331847548928,
+    "pe_ratio": 57.29839,
+    "forward_pe": 43.112865,
+    "price_to_book": 51.665215,
     "dividend_yield": 0.02,
     "beta": 2.145,
     "fifty_two_week_low": 86.62,
@@ -1377,7 +1377,7 @@
         "volume": 147674000
       }
     ],
-    "last_updated": "2025-08-05T16:25:03.322680"
+    "last_updated": "2025-08-05T16:43:43.298726"
   },
   {
     "symbol": "META",
@@ -1391,12 +1391,12 @@
     "open": 776.38,
     "day_low": 763.0,
     "day_high": 783.1299,
-    "volume": 6690131,
+    "volume": 6983952,
     "avg_volume": 12666474,
-    "market_cap": 1924801757184,
-    "pe_ratio": 27.801163,
-    "forward_pe": 30.284586,
-    "price_to_book": 9.882372,
+    "market_cap": 1924035510272,
+    "pe_ratio": 27.790096,
+    "forward_pe": 30.272532,
+    "price_to_book": 9.878438,
     "dividend_yield": 0.27,
     "beta": 1.273,
     "fifty_two_week_low": 478.65,
@@ -1607,7 +1607,7 @@
         "volume": 15763800
       }
     ],
-    "last_updated": "2025-08-05T16:25:04.716829"
+    "last_updated": "2025-08-05T16:43:44.581866"
   },
   {
     "symbol": "NFLX",
@@ -1619,14 +1619,14 @@
     "thirty_day_change": -9.19883417843817,
     "previous_close": 1170.99,
     "open": 1171.0,
-    "day_low": 1156.76,
+    "day_low": 1155.55,
     "day_high": 1171.71,
-    "volume": 994340,
+    "volume": 1071987,
     "avg_volume": 3388167,
-    "market_cap": 491907121152,
-    "pe_ratio": 49.42912,
-    "forward_pe": 48.680824,
-    "price_to_book": 19.714071,
+    "market_cap": 491176230912,
+    "pe_ratio": 49.35568,
+    "forward_pe": 48.608494,
+    "price_to_book": 19.68478,
     "dividend_yield": 0,
     "beta": 1.589,
     "fifty_two_week_low": 600.62,
@@ -1837,7 +1837,7 @@
         "volume": 2241600
       }
     ],
-    "last_updated": "2025-08-05T16:25:06.225747"
+    "last_updated": "2025-08-05T16:43:45.846037"
   },
   {
     "symbol": "AMD",
@@ -1851,12 +1851,12 @@
     "open": 177.565,
     "day_low": 172.2905,
     "day_high": 177.99,
-    "volume": 37860719,
+    "volume": 39778279,
     "avg_volume": 51600387,
-    "market_cap": 285155622912,
-    "pe_ratio": 129.31618,
-    "forward_pe": 34.484314,
-    "price_to_book": 4.910238,
+    "market_cap": 284539518976,
+    "pe_ratio": 129.03677,
+    "forward_pe": 34.409805,
+    "price_to_book": 4.8996286,
     "dividend_yield": 0,
     "beta": 1.94,
     "fifty_two_week_low": 76.48,
@@ -2067,7 +2067,7 @@
         "volume": 52418000
       }
     ],
-    "last_updated": "2025-08-05T16:25:07.753207"
+    "last_updated": "2025-08-05T16:43:47.080091"
   },
   {
     "symbol": "INTC",
@@ -2081,12 +2081,12 @@
     "open": 19.71,
     "day_low": 19.68,
     "day_high": 20.535,
-    "volume": 65118675,
+    "volume": 66919999,
     "avg_volume": 81756493,
-    "market_cap": 89400221696,
+    "market_cap": 88984412160,
     "pe_ratio": 0,
-    "forward_pe": 21.0567,
-    "price_to_book": 0.9133389,
+    "forward_pe": 20.958763,
+    "price_to_book": 0.9090909,
     "dividend_yield": 0,
     "beta": 1.218,
     "fifty_two_week_low": 17.67,
@@ -2297,6 +2297,6 @@
         "volume": 68985600
       }
     ],
-    "last_updated": "2025-08-05T16:25:09.445919"
+    "last_updated": "2025-08-05T16:43:48.469087"
   }
 ]

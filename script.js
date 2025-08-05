@@ -589,45 +589,131 @@ window.showStockDetails = showStockDetails;
 window.addToWatchlist = addToWatchlist;
 window.loadStockData = loadStockData;
 
-// Placeholder functions (will be implemented in separate files)
+// Stock Details Modal
 function showStockDetails(symbol) {
-    // Enhanced modal implementation will be in a separate file
-    console.log('Showing details for:', symbol);
+    const stock = AppState.stocks.find(s => s.symbol === symbol);
+    if (!stock) {
+        showNotification('Stock not found', 'error');
+        return;
+    }
+    
+    // Update modal content
+    const modal = document.getElementById('stock-modal');
+    const modalSymbol = document.getElementById('modal-symbol');
+    const modalTitle = document.getElementById('modal-title');
+    const modalSubtitle = document.getElementById('modal-subtitle');
+    const modalContent = document.getElementById('modal-content');
+    
+    if (modal && modalSymbol && modalTitle && modalSubtitle && modalContent) {
+        modalSymbol.textContent = symbol;
+        modalTitle.textContent = `${symbol} - ${stock.name}`;
+        modalSubtitle.textContent = `Current Price: $${stock.current_price}`;
+        
+        modalContent.innerHTML = `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Price Information</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600 dark:text-gray-400">Current Price:</span>
+                                <span class="font-medium text-gray-900 dark:text-white">$${stock.current_price}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600 dark:text-gray-400">Change:</span>
+                                <span class="font-medium ${getSentimentClass(stock.change_percent)}">${stock.change_percent}%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600 dark:text-gray-400">Market Cap:</span>
+                                <span class="font-medium text-gray-900 dark:text-white">${formatMarketCap(stock.market_cap)}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Trading Information</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600 dark:text-gray-400">Volume:</span>
+                                <span class="font-medium text-gray-900 dark:text-white">${formatVolume(stock.volume)}</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600 dark:text-gray-400">P/E Ratio:</span>
+                                <span class="font-medium text-gray-900 dark:text-white">${stock.pe_ratio || 'N/A'}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">Quick Actions</h4>
+                        <div class="space-y-2">
+                            <button onclick="addToWatchlist('${symbol}')" class="w-full bg-blue-600 text-white rounded-lg py-2 px-4 hover:bg-blue-700 transition-colors text-sm">
+                                Add to Watchlist
+                            </button>
+                            <button onclick="refreshAIInsights()" class="w-full bg-purple-600 text-white rounded-lg py-2 px-4 hover:bg-purple-700 transition-colors text-sm">
+                                Refresh AI Insights
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-900 dark:text-white mb-2">AI Analysis</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">
+                            AI insights for ${symbol} will be generated based on current market data and technical indicators.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        modal.classList.remove('hidden');
+    }
 }
 
+// Watchlist functionality
 function addToWatchlist(symbol) {
-    // Watchlist functionality will be implemented
-    showNotification(`${symbol} added to watchlist`, 'success');
+    const watchlist = JSON.parse(localStorage.getItem('watchlist') || '[]');
+    if (!watchlist.includes(symbol)) {
+        watchlist.push(symbol);
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+        showNotification(`${symbol} added to watchlist`, 'success');
+    } else {
+        showNotification(`${symbol} is already in your watchlist`, 'info');
+    }
 }
 
-function generateAIInsights() {
-    // AI insights will be implemented in ai-insights.js
-    console.log('Generating AI insights...');
-}
-
-function refreshAIInsights() {
-    // AI insights refresh will be implemented
-    console.log('Refreshing AI insights...');
-}
-
-function showNotification(message, type = 'info') {
-    // Notification system will be implemented in notifications.js
-    console.log('Notification:', message, type);
-}
-
-// Initialize AI Insights and Notifications (placeholder)
-function initializeAIInsights() {
-    console.log('AI Insights initialized');
-}
-
-function initializeNotifications() {
-    console.log('Notifications initialized');
-}
-
-function initializePWA() {
-    console.log('PWA initialized');
-}
-
+// Initialize Search and Sort functionality
 function initializeSearchAndSort() {
-    console.log('Search and sort initialized');
+    console.log('🔍 Initializing Search and Sort...');
+    
+    // Search functionality
+    const searchInput = document.getElementById('stock-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', debounce(handleSearch, 300));
+    }
+    
+    // Sort functionality
+    const sortSelect = document.getElementById('sort-select');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', handleSort);
+    }
+    
+    // View toggle
+    const viewToggle = document.getElementById('view-toggle');
+    if (viewToggle) {
+        viewToggle.addEventListener('click', toggleViewMode);
+    }
+    
+    // Sortable table headers
+    const sortableHeaders = document.querySelectorAll('[data-sort]');
+    sortableHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const sortBy = header.getAttribute('data-sort');
+            AppState.sortBy = sortBy;
+            AppState.sortOrder = AppState.sortOrder === 'asc' ? 'desc' : 'asc';
+            displayStockTable(AppState.stocks);
+        });
+    });
 }
